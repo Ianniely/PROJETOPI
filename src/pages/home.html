@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link href="../../dist/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../img/favicon.ico.png" type="image/x-icon">
     <style>.group:hover > .absolute {display: block;}</style>
@@ -208,7 +209,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-gray-50 pt-10">
+    <section class="bg-gray-50 pt-10 pb-10">
             <div class="bg-[url('../img/dunas.jpg')] bg-no-repeat bg-top bg-cover container mx-auto">
                 <div class="bg-black-gd p-10">
                         <h2 class="text-white text-4xl mb-5">Anucie no INSPIRERN</h2>
@@ -238,9 +239,9 @@
                 </div>
             </div>
     </section>
-    <section class="bg-gray-50 pt-10">
+    <section class="bg-gray-900 pt-10">
         <div class="container mx-auto pb-10">
-            <h1 class="text-5xl mt-10 pb-12">Navegue por Categoria</h1>
+            <h1 class="text-5xl mt-10 pb-12 text-gray-50">Navegue por Categoria</h1>
             <div class="flex items-center space-x-5">
                 <div class="relative">
                     <img src="../../img/Restaurante-rn.jpg" alt="" class="border rounded-sm border-transparent drop-shadow-md">
@@ -265,9 +266,28 @@
             </div>
         </div>
     </section>
-    <section class="bg-gray-50 pt-10">
+    <section class="bg-gray-900 pt-10">
+        <div class="container mx-auto flex space-x-5">
+            <div class="space-y-5">
+                <img src="../../img/mapa.jpeg" alt="Mapa do RN" class="border rounded-md border-transparent">
+                <img src="../../img/Fortes-dos-reis-magos-panoramica.jpeg" alt="Forte dos reis magos em Natal-RN" class="border rounded-md border-transparent">
+                <img src="../../img/paulo-cesar-panoramica.jpeg" alt="Paulo Cesár em Natal-RN" class="border rounded-md border-transparent">
+            </div>
+            <div class="relative w-2/3">
+                <div id="pac-container" class="absolute top-0 z-10 p-2">
+                    <input id="pac-input" class="pac-input w-96 text-lg p-1 border rounded-sm border-transparent shadow-md" type="text" placeholder="Entre com uma localização" />
+                    <div id="pac-suggestions"></div>
+                </div>
+                <div id="map" class="w-full h-full border rounded-md border-transparent"></div>
+            </div>
+        </div>
+        <div id="infowindow-content">
+          <span id="place-name" class="title"></span><br />
+          <span id="place-address"></span>
+        </div>
+    </section>
+    <section class="bg-gray-900 pt-10">
         <div class="bg-[url('../img/Newton_Navarro_Bridge_Natal_Brazil.jpg')] bg-no-repeat bg-center bg-cover h-96">
-            
         </div>
     </section>
     <footer>
@@ -336,6 +356,76 @@
             var submenu = document.querySelector('.group > .absolute');
             submenu.classList.toggle('hidden');
         }
+
+       
     </script>
+    <script>
+        function initMap() {
+          const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -5.6650231, lng: -35.9928033 },
+            zoom: 9,
+            mapTypeControl: false,
+          });
+
+          const inputContainer = document.getElementById("pac-container");
+          const input = document.getElementById("pac-input");
+          const autocomplete = new google.maps.places.Autocomplete(input);
+            
+          autocomplete.bindTo("bounds", map);
+          let streetViewActive = false;
+          
+          map.addListener("click", () => {
+            if (streetViewActive) {
+            inputContainer.style.display = "block"; // Mostrar o campo de entrada
+            streetViewActive = false;
+            }
+          });
+
+          map.getStreetView().addListener("visible_changed", () => {
+            streetViewActive = map.getStreetView().getVisible();
+            inputContainer.style.display = streetViewActive ? "none" : "block"; // Esconder o campo de entrada quando o Street View estiver ativo
+        });
+    
+          const infowindow = new google.maps.InfoWindow();
+          const infowindowContent = document.getElementById("infowindow-content");
+    
+          infowindow.setContent(infowindowContent);
+    
+          const marker = new google.maps.Marker({
+            map,
+            anchorPoint: new google.maps.Point(0, -29),
+          });
+    
+          autocomplete.addListener("place_changed", () => {
+            infowindow.close();
+            marker.setVisible(false);
+    
+            const place = autocomplete.getPlace();
+    
+            if (!place.geometry || !place.geometry.location) {
+              window.alert("No details available for input: '" + place.name + "'");
+              return;
+            }
+    
+            if (place.geometry.viewport) {
+              map.fitBounds(place.geometry.viewport);
+            } else {
+              map.setCenter(place.geometry.location);
+              map.setZoom(17);
+            }
+    
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+            infowindowContent.children["place-name"].textContent = place.name;
+            infowindowContent.children["place-address"].textContent =
+              place.formatted_address;
+            infowindow.open(map, marker);
+          });
+        }
+      </script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7aa27JvzYih3S2sfNUaIuhPFQUZiDRek&callback=initMap&libraries=places&v=weekly"
+    defer
+  ></script>
 </body>
 </html>
