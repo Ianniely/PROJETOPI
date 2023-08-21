@@ -1,5 +1,15 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.3.3"
-  }
+  },
+  "name": "inspirern",
+  "description": "Um site para a divulgação de pontos turísticos do Rio Grande do Norte. Esse site visa movimentar e facilitar o turismo no estado.",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
