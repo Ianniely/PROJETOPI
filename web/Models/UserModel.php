@@ -18,18 +18,6 @@ class UserModel
         }
 
         /**
-         * Receives an email and looks for it in the users table, if it finds the email returns all user data otherwise returns false.
-         */
-        public function find(string $emailUser) : Array | bool
-        {
-            $query = "SELECT * FROM tb_usuario WHERE usu_email=:emailUser";
-            $stmt = $this->connection->prepare($query);
-            $stmt->bindValue(":emailUser", $emailUser);
-            $stmt->execute();
-            return $stmt->fetch();
-        }
-
-        /**
          * Receives data sent by a registration form and saves it in the user table of the database, returning true or false whether the query was successful or not.
          */
         public function save(string $userName, string $userCity, string $userState, string $userPhoneNumber, string $userEmail, string $userPassword) : bool 
@@ -46,6 +34,21 @@ class UserModel
             return $result;
         }
 
+        /**
+         * Receives an email and looks for it in the users table, if it finds the email returns all user data otherwise returns false.
+         */
+        public function find(string $emailUser) : Array | bool
+        {
+            $query = "SELECT * FROM tb_usuario WHERE usu_email=:emailUser";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bindValue(":emailUser", $emailUser);
+            $stmt->execute();
+            return $stmt->fetch();
+        }
+
+        /**
+         * Receives some information and updates in the database.  Returning the new changes if it worked or false if the query went wrong.
+         */
         public function update(string $nameCol, string $value, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET $nameCol=:value WHERE usu_id=:id";
@@ -62,6 +65,9 @@ class UserModel
             
         }
 
+        /**
+         * Receives the user id and deletes the column in the database corresponding to it.
+         */
         public function delete(string $idUser) : bool
         {
             $query = "DELETE FROM tb_usuario WHERE usu_id=:idUser";   
