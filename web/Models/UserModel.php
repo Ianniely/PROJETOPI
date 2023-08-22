@@ -20,14 +20,15 @@ class UserModel
         /**
          * Receives data sent by a registration form and saves it in the user table of the database, returning true or false whether the query was successful or not.
          */
-        public function save(string $userName, string $userCity, string $userState, string $userPhoneNumber, string $userEmail, string $userPassword) : bool 
+        public function save(string $userName, string $userCity, string $userState, string $userPhoneNumber, string $userType, string $userEmail, string $userPassword) : bool 
         {
-            $query = "INSERT INTO tb_usuario(usu_nome, usu_cidade, usu_estado, usu_telefone, usu_email, usu_senha)"  . "values(:userName,:userCity,:userState,:userPhoneNumber,:userEmail,:userPassword)";
+            $query = "INSERT INTO tb_usuario(usu_nome, usu_cidade, usu_estado, usu_telefone, usu_tipo, usu_email, usu_senha)"  . "values(:userName,:userCity,:userState,:userPhoneNumber,:userType,:userEmail,:userPassword)";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":userName", $userName);
             $stmt->bindValue(":userCity", $userCity);
             $stmt->bindValue(":userState", $userState);
             $stmt->bindValue(":userPhoneNumber", $userPhoneNumber);
+            $stmt->bindValue(":userType", $userType);
             $stmt->bindValue(":userEmail", $userEmail);
             $stmt->bindValue(":userPassword", password_hash($userPassword, PASSWORD_ARGON2I));
             $result = $stmt->execute();
@@ -48,7 +49,7 @@ class UserModel
 
         /**
          * Receives some information and updates in the database.  Returning the new changes if it worked or false if the query went wrong.
-         */
+         
         public function update(string $nameCol, string $value, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET $nameCol=:value WHERE usu_id=:id";
@@ -63,6 +64,62 @@ class UserModel
                 return false;
             }
             
+        }*/
+
+        private function update(string $query,  string $value, int $id, string $email)
+        {
+            $stmt = $this->connection->prepare($query);
+            $stmt->bindValue(":valuee", $value);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+
+            if($stmt) {
+                return $this->find($email);
+            } else {
+                return false;
+            }
+        }
+
+        public function updateName(string $userName, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_nome=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userName, $id, $email);
+        }
+
+        public function updateCity(string $userCity, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_cidade=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userCity, $id, $email);
+        }
+
+        public function updateState(string $userState, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_estado=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userState, $id, $email);
+        }
+
+        public function updatePhoneNumber(string $userPhoneNumber, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_telefone=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userPhoneNumber, $id, $email);
+        }
+
+        public function updateType(string $userType, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_tipo=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userType, $id, $email);
+        }
+
+        public function updateEmail(string $userEmail, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_email=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userEmail, $id, $email);
+        }
+
+        public function updatePassword(string $userPassword, int $id, string $email) : Array | bool
+        {
+            $query = "UPDATE tb_usuario SET usu_senha=:valuee WHERE usu_id=:id";
+            return $this->update($query, $userPassword, $id, $email);
         }
 
         /**

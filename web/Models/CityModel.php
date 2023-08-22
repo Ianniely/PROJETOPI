@@ -42,4 +42,35 @@ class City {
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    /**
+     * Receives some information and updates in the database.  Returning the new changes if it worked or false if the query went wrong.
+     */
+    public function update(string $nameCol, string $value, int $id, string $name) : Array | bool
+    {
+        $query = "UPDATE tb_cidade SET $nameCol=:value WHERE cid_id=:id";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bindValue(":value", $value);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        
+        if($stmt) {
+            return $this->find($name);
+        } else {
+            return false;
+        }
+        
+    }
+
+    /**
+     * Receives the city id and deletes the column in the database corresponding to it.
+     */
+    public function delete(string $cityId) : bool
+    {
+        $query = "DELETE FROM tb_cidade WHERE cid_id=:cityId";   
+        $stmt = $this->connection->prepare($query);
+        $stmt->bindValue(":cityId", $cityId);
+        $result = $stmt->execute();
+        return $result;
+    }
 }

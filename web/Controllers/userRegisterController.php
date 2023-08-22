@@ -10,6 +10,7 @@
         $city = $_POST['city'];
         $state = $_POST['state'];
         $phoneNumber = $_POST['phoneNumber'];
+        $type = 'comum';
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -25,7 +26,7 @@
                 header('Location: /login');
             } else {
                 
-                $ResultQueryExecution = $userModel->save($name, $city, $state, $phoneNumber, $email, $password);
+                $ResultQueryExecution = $userModel->save($name, $city, $state, $phoneNumber, $type, $email, $password);
                 
                 //The data was saved executed successfully
                 $_SESSION['loggedUser'] = true;
@@ -34,7 +35,7 @@
                 $_SESSION['userData'] = $data;
     
                 header('Location: /');
-            }
+            }   
         } else {
             $incorrectRegister = true;
 

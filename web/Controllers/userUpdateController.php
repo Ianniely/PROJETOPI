@@ -12,35 +12,35 @@
         if(!empty($_POST['name'])) {
 
             $newUserName = $_POST['name'];
-            $data = $user->update('usu_nome', $newUserName, $id, $email);
+            $data = $user->updateName($newUserName, $id, $email);
 
         }
 
         if(!empty($_POST['city'])) {
 
             $newUserCity = $_POST['city'];
-            $data = $user->update('usu_cidade', $newUserCity, $id, $email);
+            $data = $user->updateCity($newUserCity, $id, $email);
             
         }
 
         if(!empty($_POST['state'])) {
 
             $newUserState = $_POST['state'];
-            $data = $user->update('usu_estado', $newUserState, $id, $email);
+            $data = $user->updateState($newUserState, $id, $email);
             
         }
 
         if(!empty($_POST['phoneNumber'])) {
 
             $newUserPhoneNumber = $_POST['phoneNumber'];
-            $data = $user->update('usu_telefone', $newUserPhoneNumber, $id, $email);
+            $data = $user->updatePhoneNumber($newUserPhoneNumber, $id, $email);
             
         }
 
         if(!empty($_POST['email'])) {
 
             $newUserEmail = $_POST['email'];
-            $data = $user->update('usu_email', $newUserEmail, $id, $newUserEmail);
+            $data = $user->updateEmail($newUserEmail, $id, $newUserEmail);
             
         }
 
@@ -51,7 +51,7 @@
             if(password_verify($userPassword, $_SESSION['userData']['usu_senha'])) {
 
                 $newUserPassWord = password_hash($_POST['newPassword'], PASSWORD_ARGON2I);
-                $data = $user->update('usu_senha', $newUserPassWord, $id, $email);
+                $data = $user->updatePassword($newUserPassWord, $id, $email);
             
             }
            
