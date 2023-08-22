@@ -57,17 +57,73 @@
                 <div class="mt-12">
                     <h1 class="text-7xl mt-28 mb-7">Conheça as cidades do Potiguar!</h1>
                     <div>
-                    <p class="text-lg pb-40 ">Explore as cidades encantadoras do Rio Grande do Norte, cada uma com sua própria história, cultura vibrante e beleza natural única. De praias deslumbrantes a ricos patrimônios históricos, mergulhe nas experiências autênticas que cada localidade tem a oferecer. Conheça lugares incríveis, saboreie a gastronomia local e mergulhe nas tradições fascinantes que tornam o nosso estado um destino inesquecível para todos os tipos de viajantes.</p>
+                    <p class="text-lg pb-40 ">Explore as cidades encantadoras do Rio Grande do Norte, cada uma com sua própria história, cultura vibrante e beleza natural única. De praias deslumbrantes a ricos patrimônios históricos, mergulhe nas experiências autênticas que cada localidade tem a oferecer.</p>
                     </div>
                 </div>
             </header>
         </div>
     </section>
+
+    <section class="bg-gray-50 pt-10">
+        <div class="container mx-auto pb-10">
+            <h1 class="text-5xl mt-10 pb-12">Cidades Recomendadas para Você</h1>
+        <div class="flex items-center space-x-5">
+            <div class="relative">
+                <img src="../../public/img/natal-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Natal</p>
+            </div>
+            <div class="relative">
+                <img src="../../public/img/pipa-rn-2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Pipa</p>
+            </div>
+            <div class="relative">
+                <img src="../../public/img/paramini-festa.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Parnamirim</p>
+            </div>
+            <div class="relative">
+                <img src="../../public/img/martins-rn-4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Martins</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="bg-gray-50 pt-10">
+        <div class="container mx-auto pb-10">
+            <h1 class="text-5xl mt-10 pb-12">Cidades litorâneas</h1>
+        <div class="flex items-center space-x-5">
+            <div class="relative">
+                <img src="../../public/img/Riodofogo-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Rio do Fogo</p>
+            </div>
+            <div class="relative">
+                <img src="../../public/img/macau-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Macau</p>
+            </div>
+            <div class="relative">
+                <img src="../../public/img/galinhos-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Galinhos</p>
+            </div>
+            <div class="relative">
+                <img src="../../public/img/touros-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Touros</p>
+            </div>
+        </div>
+    </div>
+    </section>
     <script>
         const images = [
-          "../../public/img/caico-rn-3.jpg",
           "../../public/img/caico-rn.png",
-          "../../public/img/post-7-lugares-conhecer-serido-antes-morrer-catedral-de-santana.jpg",
+          "../../public/img/natal-rn-2.jpg",
+          "../../public/img/caico-rn-3.jpg",
         ];
       
         const carousel = document.querySelector(".carousel");
