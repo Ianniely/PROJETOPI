@@ -950,11 +950,6 @@ video {
   border-color: transparent;
 }
 
-.border-green-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(22 163 74 / var(--tw-border-opacity));
-}
-
 .border-b-gray-200 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -987,6 +982,11 @@ video {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .bg-gray-700 {
@@ -1024,16 +1024,6 @@ video {
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
 
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\.\.\/img\/Newton_Navarro_Bridge_Natal_Brazil\.jpg\'\)\] {
   background-image: url('../img/Newton_Navarro_Bridge_Natal_Brazil.jpg');
 }
@@ -1052,6 +1042,46 @@ video {
 
 .bg-\[url\(\'\.\.\/img\/praias-rj\.jpg\'\)\] {
   background-image: url('../img/praias-rj.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/caico-rn\.jpg\'\)\] {
+  background-image: url('../img/caico-rn.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/caico-rn\.png\'\)\] {
+  background-image: url('../img/caico-rn.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/martins-rn\.png\'\)\] {
+  background-image: url('../img/martins-rn.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/parnamirim-rn\.png\'\)\] {
+  background-image: url('../img/parnamirim-rn.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/portoalegre-rn\.png\'\)\] {
+  background-image: url('../img/portoalegre-rn.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/portoalegre-rn\.jpg\'\)\] {
+  background-image: url('../img/portoalegre-rn.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/martins-rn-3\.png\'\)\] {
+  background-image: url('../img/martins-rn-3.png');
+}
+
+.bg-\[url\(\'\.\.\/img\/martins-rn-3\.jpg\'\)\] {
+  background-image: url('../img/martins-rn-3.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/martins-rn-2\.jpg\'\)\] {
+  background-image: url('../img/martins-rn-2.jpg');
+}
+
+.bg-\[url\(\'\.\.\/img\/caico-rn-2\.jpg\'\)\] {
+  background-image: url('../img/caico-rn-2.jpg');
 }
 
 .bg-cover {
@@ -1194,10 +1224,6 @@ video {
   padding-top: 5rem;
 }
 
-.pt-3 {
-  padding-top: 0.75rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1231,6 +1257,11 @@ video {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1244,11 +1275,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-bold {
@@ -1293,6 +1319,11 @@ video {
   color: rgb(3 7 18 / var(--tw-text-opacity));
 }
 
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -1316,11 +1347,6 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
-}
-
-.text-green-600 {
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 
 .opacity-0 {

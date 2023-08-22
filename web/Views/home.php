@@ -22,14 +22,14 @@
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
                     <div class="flex justify-between items-center">
-                        <a href="#">INSPIRERN</a>
+                        <a href="/">INSPIRERN</a>
                         <span class="text-3xl cursor-pointer lg:hidden block"><ion-icon name="menu" onclick="Menu(this)"></ion-icon></span>
                         <span class="hidden"><ion-icon name="close"></ion-icon></span>
                     </div>
                     <ul class="space-x-5 lg:flex z-[1] lg:z-auto lg:static absolute bg-gray-200 text-gray-700 lg:text-white xl:text-white lg:bg-transparent w-full left-0 lg:w-auto lg:opacity-100 opacity-0">
-                        <li><a href="/pages">Início</a></li>
+                        <li><a href="/">Início</a></li>
                         <li><a href="/pages">Pontos Turísticos</a></li>
-                        <li><a href="/pages">Cidades</a></li>
+                        <li><a href="/city">Cidades</a></li>
                         <li><a href="/anuciarEvento">Eventos</a></li>
                         <li><a href="/pages">Hospedagem</a></li>
                         <li><a href="/pages">Restaurantes</a></li>
@@ -380,8 +380,6 @@
             var submenu = document.querySelector('.group > .absolute');
             submenu.classList.toggle('hidden');
         }
-
-       
     </script>
     <script>
         const images = [
@@ -395,10 +393,10 @@
         function showNextSlide() {
             currentIndex = (currentIndex + 1) % images.length;
             carousel.style.backgroundImage = `url('${images[currentIndex]}')`;
-  }
+        }
 
-  setInterval(showNextSlide, 5000); // Change slide every 5 seconds
-      </script>
+        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+    </script>
       
     <script>
         function initMap() {

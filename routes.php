@@ -15,3 +15,4 @@
    Router::get('/forgotPassword', 'web/Views/forgotPassword.php');
    Router::post('/forgotPassawordController', 'web/Controllers/userForgotPasswordController.php');
    Router::get('/controlPanel', 'web/Controllers/controlPanelController.php');
+   Router::get('/city', 'web/Views/city.php');
