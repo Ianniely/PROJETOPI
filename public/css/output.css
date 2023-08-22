@@ -711,6 +711,10 @@ video {
   margin-top: 1.75rem;
 }
 
+.mb-48 {
+  margin-bottom: 12rem;
+}
+
 .block {
   display: block;
 }
@@ -1028,6 +1032,10 @@ video {
   background-image: url('../img/Newton_Navarro_Bridge_Natal_Brazil.jpg');
 }
 
+.bg-\[url\(\'\.\.\/img\/caico-rn\.png\'\)\] {
+  background-image: url('../img/caico-rn.png');
+}
+
 .bg-\[url\(\'\.\.\/img\/megulho\.jpg\'\)\] {
   background-image: url('../img/megulho.jpg');
 }
@@ -1042,46 +1050,6 @@ video {
 
 .bg-\[url\(\'\.\.\/img\/praias-rj\.jpg\'\)\] {
   background-image: url('../img/praias-rj.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/caico-rn\.jpg\'\)\] {
-  background-image: url('../img/caico-rn.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/caico-rn\.png\'\)\] {
-  background-image: url('../img/caico-rn.png');
-}
-
-.bg-\[url\(\'\.\.\/img\/martins-rn\.png\'\)\] {
-  background-image: url('../img/martins-rn.png');
-}
-
-.bg-\[url\(\'\.\.\/img\/parnamirim-rn\.png\'\)\] {
-  background-image: url('../img/parnamirim-rn.png');
-}
-
-.bg-\[url\(\'\.\.\/img\/portoalegre-rn\.png\'\)\] {
-  background-image: url('../img/portoalegre-rn.png');
-}
-
-.bg-\[url\(\'\.\.\/img\/portoalegre-rn\.jpg\'\)\] {
-  background-image: url('../img/portoalegre-rn.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/martins-rn-3\.png\'\)\] {
-  background-image: url('../img/martins-rn-3.png');
-}
-
-.bg-\[url\(\'\.\.\/img\/martins-rn-3\.jpg\'\)\] {
-  background-image: url('../img/martins-rn-3.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/martins-rn-2\.jpg\'\)\] {
-  background-image: url('../img/martins-rn-2.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/caico-rn-2\.jpg\'\)\] {
-  background-image: url('../img/caico-rn-2.jpg');
 }
 
 .bg-cover {
@@ -1222,6 +1190,18 @@ video {
 
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pb-48 {
+  padding-bottom: 12rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-40 {
+  padding-top: 10rem;
 }
 
 .text-left {
