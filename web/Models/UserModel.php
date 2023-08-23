@@ -47,9 +47,16 @@ class UserModel
             return $stmt->fetch();
         }
 
+        public function findSuperUser()
+        {
+            $query = "SELECT * FROM tb_usuario WHERE usu_tipo=:tipo";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bindValue(":tipo", 'super');
+            $result =  $stmt->execute();
+            return $stmt->fetch();
+        }
+
         /**
-         * Receives some information and updates in the database.  Returning the new changes if it worked or false if the query went wrong.
-         
         public function update(string $nameCol, string $value, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET $nameCol=:value WHERE usu_id=:id";
@@ -66,6 +73,9 @@ class UserModel
             
         }*/
 
+        /**
+         * Receives some information and updates in the database.  Returning the new changes if it worked or false if the query went wrong.
+         */
         private function update(string $query,  string $value, int $id, string $email)
         {
             $stmt = $this->connection->prepare($query);
@@ -80,42 +90,63 @@ class UserModel
             }
         }
 
+         /**
+         * Receives a new name and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updateName(string $userName, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_nome=:valuee WHERE usu_id=:id";
             return $this->update($query, $userName, $id, $email);
         }
 
+         /**
+         * Receives a new city and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updateCity(string $userCity, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_cidade=:valuee WHERE usu_id=:id";
             return $this->update($query, $userCity, $id, $email);
         }
 
+         /**
+         * Receives a new state and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updateState(string $userState, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_estado=:valuee WHERE usu_id=:id";
             return $this->update($query, $userState, $id, $email);
         }
 
+         /**
+         * Receives a new phone number and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updatePhoneNumber(string $userPhoneNumber, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_telefone=:valuee WHERE usu_id=:id";
             return $this->update($query, $userPhoneNumber, $id, $email);
         }
 
+         /**
+         * Receives a new type and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updateType(string $userType, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_tipo=:valuee WHERE usu_id=:id";
             return $this->update($query, $userType, $id, $email);
         }
 
+         /**
+         * Receives a new email and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updateEmail(string $userEmail, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_email=:valuee WHERE usu_id=:id";
             return $this->update($query, $userEmail, $id, $email);
         }
 
+         /**
+         * Receives a new password and updates the database.  Returning the new change if it worked or false if the query went wrong.
+         */
         public function updatePassword(string $userPassword, int $id, string $email) : Array | bool
         {
             $query = "UPDATE tb_usuario SET usu_senha=:valuee WHERE usu_id=:id";

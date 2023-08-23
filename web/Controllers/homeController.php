@@ -6,4 +6,8 @@
         $userName = $userName[0];
     }
 
-    require 'web/Views/home.php';
+    if(isset($_SESSION['userData']['usu_tipo']) && $_SESSION['userData']['usu_tipo'] == 'super') {
+        include 'web/Views/homeSuperUser.php';
+    } else {
+        require 'web/Views/home.php';
+    }

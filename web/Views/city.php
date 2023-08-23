@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        #map {
+        height: 500px;
+        }
+        #cityInfo {
+        position: absolute;
+        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 14px;
+        }
+    </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link href="../../public/css/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../public/img/favicon.ico.png" type="image/x-icon">
@@ -119,6 +132,62 @@
         </div>
     </div>
     </section>
+
+    <div id="map"></div>
+  <div id="cityInfo"></div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7aa27JvzYih3S2sfNUaIuhPFQUZiDRek&callback=initMap&libraries=places&v=weekly"
+    defer
+  ></script>
+  <script>
+        function Menu(e) {
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[50px]'),list.classList.add('opacity-100')) : (e.name = "menu",list.classList.remove('top-[50px]'),list.classList.remove('opacity-100')) 
+        }
+      
+        function toggleSubMenu() {
+            var submenu = document.querySelector('.group > .absolute');
+            submenu.classList.toggle('hidden');
+        }
+    </script>
+  <script>
+    // Dados das cidades (substitua com suas próprias informações)
+const citiesData = [
+  { name: "Natal", lat: -5.7945, lng: -35.211 },
+  { name: "Mossoró", lat: -5.1879, lng: -37.3443 },
+  // Adicione mais cidades conforme necessário
+];
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -5.7945, lng: -35.211 }, // Coordenadas iniciais do mapa
+    zoom: 8,
+  });
+
+  // Adicionar informações interativas para cada cidade
+  citiesData.forEach((city) => {
+    const cityMarker = new google.maps.Marker({
+      position: { lat: city.lat, lng: city.lng },
+      map: map,
+      title: city.name,
+    });
+
+    // Adicionar evento mouseover para exibir informações da cidade
+    cityMarker.addListener("mouseover", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: city.name,
+      });
+      infoWindow.open(map, cityMarker);
+    });
+
+    // Adicionar evento click para redirecionar para a página da cidade
+    cityMarker.addListener("click", () => {
+      // Redirecionar para a página da cidade (substitua com seu próprio URL)
+      window.location.href = `cidade.html?nome=${city.name}`;
+    });
+  });
+}
+  </script>
     <script>
         const images = [
           "../../public/img/caico-rn.png",

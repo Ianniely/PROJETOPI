@@ -46,20 +46,54 @@ class City {
     /**
      * Receives some information and updates in the database.  Returning the new changes if it worked or false if the query went wrong.
      */
-    public function update(string $nameCol, string $value, int $id, string $name) : Array | bool
+    private function update(string $query,  string $value, int $id, string $name)
     {
-        $query = "UPDATE tb_cidade SET $nameCol=:value WHERE cid_id=:id";
         $stmt = $this->connection->prepare($query);
-        $stmt->bindValue(":value", $value);
+        $stmt->bindValue(":valuee", $value);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
-        
+
         if($stmt) {
             return $this->find($name);
         } else {
             return false;
         }
-        
+    }
+
+    /**
+     * Receives a new name and updates the database.  Returning the new change if it worked or false if the query went wrong.
+     */
+    public function updateName(string $cityName, int $id, string $name) : Array | bool
+    {
+        $query = "UPDATE tb_cidade SET cid_nome=:valuee WHERE cid_id=:id";
+        return $this->update($query, $cityName, $id, $name);
+    }
+
+    /**
+     * Receives a new description and updates the database.  Returning the new change if it worked or false if the query went wrong.
+     */
+    public function updateDescription(string $cityDescription, int $id, string $name) : Array | bool
+    {
+        $query = "UPDATE tb_cidade SET cid_descricao=:valuee WHERE cid_id=:id";
+        return $this->update($query, $cityDescription, $id, $name);
+    }
+
+    /**
+     * Receives a new population and updates the database.  Returning the new change if it worked or false if the query went wrong.
+     */
+    public function updatePopulation(string $cityPopulation, int $id, string $name) : Array | bool
+    {
+        $query = "UPDATE tb_cidade SET cid_populacao=:valuee WHERE cid_id=:id";
+        return $this->update($query, $cityPopulation, $id, $name);
+    }
+
+    /**
+     * Receives a new weather and updates the database.  Returning the new change if it worked or false if the query went wrong.
+     */
+    public function updateWeather(string $cityWeather, int $id, string $name) : Array | bool
+    {
+        $query = "UPDATE tb_cidade SET cid_clima=:valuee WHERE cid_id=:id";
+        return $this->update($query, $cityWeather, $id, $name);
     }
 
     /**
