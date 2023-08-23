@@ -8,15 +8,8 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
         #map {
-        height: 500px;
-        }
-        #cityInfo {
-        position: absolute;
-        display: none;
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 1px solid #ccc;
-        padding: 10px;
-        font-size: 14px;
+            height: 500px;
+            width: 1250px;
         }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -132,9 +125,69 @@
         </div>
     </div>
     </section>
+    <section class="bg-gray-50 pt-10">
+        <div class="container mx-auto">
+            <div id="map"></div>
+            <div id="cityInfo" class="absolute hidden bg-gray-300 p-32 text-base"></div>
+        </div>
+    </section>              
 
-    <div id="map"></div>
-  <div id="cityInfo"></div>
+    <footer class="bg-gray-50 pt-20">
+        <div class="bg-gray-700 p-8">
+            <div class="container mx-auto text-gray-50 flex justify-between">
+                    <div>
+                        <h1 class="text-xl">INSPIRERN</h1>
+                    </div>
+                    <div class="flex space-x-2">
+                        <p>SIGA</p>
+                        <span class="text-xl"><ion-icon name="logo-facebook"></ion-icon></span>
+                        <span class="text-xl"><ion-icon name="logo-instagram"></ion-icon></span>
+                        <span class="text-xl"><ion-icon name="logo-tiktok"></ion-icon></span>
+                        <span class="text-xl"><ion-icon name="logo-youtube"></ion-icon></span>
+                    </div>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-8">
+            <div class="container mx-auto text-gray-50 flex space-x-28">
+                <div class="flex flex-col gap-1">
+                    <h5 class="mb-2 font-bold">Sobre a Empresa</h5>
+                    <a href="">Atendimento ao Cliente</a>
+                    <a href="">Termos de Uso</a>
+                    <a href="">Políticas de Privacidade</a>
+                    <a href="">Blog do ViajaNet</a>
+                    <a href="">Black Friday</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h5 class="mb-2 font-bold">ViajaNet: Agência de Viagens Online</h5>
+                    <a href="">Passagens Aéreas Internacionais</a>
+                    <a href="">Passagem para São Paulo</a>
+                    <a href="">Passagem para Salvador</a>
+                    <a href="">Passagem para Recife</a>
+                    <a href="">Passagem para Bahia</a>
+                    <a href="">Passagem para Fortaleza</a>
+                    <a href="">Passagem para Maceió</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h5 class="mb-2 font-bold">Companhias Aéreas Internacionais</h5>
+                    <a href="">Tap Air Portugal</a>
+                    <a href="">Copa Airlines</a>
+                    <a href="">Aerolíneas Argentinas</a>
+                    <a href="">Air France</a>
+                    <a href="">Iberia</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <h5 class="mb-2 font-bold">Companhias Aéreas Nacionais</h5>
+                    <a href="">Azul</a>
+                    <a href="">VoeGol</a>
+                    <a href="">Latam</a>
+                    <a href="">Tam</a>
+                    <a href="">Iberia</a>
+                    <a href="">VoePass</a>
+                    <a href="">Tam</a>
+                </div>
+            </div>
+        </div>
+    </footer>
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7aa27JvzYih3S2sfNUaIuhPFQUZiDRek&callback=initMap&libraries=places&v=weekly"
     defer
@@ -151,42 +204,47 @@
         }
     </script>
   <script>
-    // Dados das cidades (substitua com suas próprias informações)
-const citiesData = [
-  { name: "Natal", lat: -5.7945, lng: -35.211 },
-  { name: "Mossoró", lat: -5.1879, lng: -37.3443 },
-  // Adicione mais cidades conforme necessário
-];
+        // Dados das cidades (substitua com suas próprias informações)
+        const citiesData = [
+        { name: "Natal", lat: -5.7945, lng: -35.211 },
+        { name: "Mossoró", lat: -5.1879, lng: -37.3443 },
+        { name: "Caicó", lat: -6.4583, lng: -37.0955 },
+        { name: "São Miguel do Gostoso", lat: -5.1234, lng: -35.6358 },
+        { name: "Martins", lat: -6.0826, lng: -37.9082 },
+        { name: "Santa Cruz", lat: -6.2254, lng: -36.019 },
+        { name: "Pipa", lat: -6.2313, lng: -35.0552 },
+        { name: "Rio do Fogo", lat: -5.2725, lng: -35.3799 },
+        ];
 
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -5.7945, lng: -35.211 }, // Coordenadas iniciais do mapa
-    zoom: 8,
-  });
+        function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -5.7945, lng: -35.211 }, // Coordenadas iniciais do mapa
+            zoom: 8,
+        });
 
-  // Adicionar informações interativas para cada cidade
-  citiesData.forEach((city) => {
-    const cityMarker = new google.maps.Marker({
-      position: { lat: city.lat, lng: city.lng },
-      map: map,
-      title: city.name,
-    });
+        // Adicionar informações interativas para cada cidade
+        citiesData.forEach((city) => {
+            const cityMarker = new google.maps.Marker({
+            position: { lat: city.lat, lng: city.lng },
+            map: map,
+            title: city.name,
+            });
 
-    // Adicionar evento mouseover para exibir informações da cidade
-    cityMarker.addListener("mouseover", () => {
-      const infoWindow = new google.maps.InfoWindow({
-        content: city.name,
-      });
-      infoWindow.open(map, cityMarker);
-    });
+            // Adicionar evento mouseover para exibir informações da cidade
+            cityMarker.addListener("mouseover", () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: city.name,
+            });
+            infoWindow.open(map, cityMarker);
+            });
 
-    // Adicionar evento click para redirecionar para a página da cidade
-    cityMarker.addListener("click", () => {
-      // Redirecionar para a página da cidade (substitua com seu próprio URL)
-      window.location.href = `cidade.html?nome=${city.name}`;
-    });
-  });
-}
+            // Adicionar evento click para redirecionar para a página da cidade
+            cityMarker.addListener("click", () => {
+            // Redirecionar para a página da cidade (substitua com seu próprio URL)
+            window.location.href = '';
+            });
+        });
+        }
   </script>
     <script>
         const images = [
