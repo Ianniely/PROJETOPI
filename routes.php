@@ -6,6 +6,7 @@
 
    Router::get('/erro404', 'web/Views/erro404.html');
    Router::get('/', 'web/Controllers/homeController.php');
+   Router::get('/homeSuper', 'web/Controllers/citySuperUserController.php');
    Router::get('/login', 'web/Views/login.php');
    Router::post('/loginController', 'web/Controllers/userLoginController.php');
    Router::post('/registerController', 'web/Controllers/userRegisterController.php');

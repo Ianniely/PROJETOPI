@@ -111,7 +111,14 @@
                     <a class="hover:underline" href="/pages">Temas</a>  
                     <a class="hover:underline" href="/pages">Favorito</a>   
                     <a class="hover:underline" href="/pages">Ajuda</a>  
-                    <a class="hover:underline" href="/pages">Privacidade</a>    
+                    <a class="hover:underline" href="/pages">Privacidade</a> 
+                    
+                    <?php 
+                        if($_SESSION['userData']['usu_tipo'] == 'super') {
+                            echo "<a class='hover:underline' href='/homeSuper'>Configurações de Cidades</a>";
+                        }
+                    ?>
+
                 </div>
             </div>
         </div>
