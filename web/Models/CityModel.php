@@ -2,7 +2,7 @@
 
 namespace web\Models;
 
-class City {
+class CityModel {
 
     private $connection;
 
@@ -19,7 +19,7 @@ class City {
     /**
      * Receives data and saves it to the database city table, returning true or false whether the query was successful or not.
      */
-    public function save(string $cityName, string $cityDescription, int $cityPopulation, string $cityWeather) : bool 
+    public function save(string $cityName, string $cityPopulation, string $cityWeather, string $cityDescription) : bool 
     {
         $query = "INSERT INTO tb_cidade(cid_nome, cid_descricao, cid_populacao, cid_clima)"  . "values(:cityName,:cityDescription,:cityPopulation,:cityWeather)";
         $stmt = $this->connection->prepare($query);
@@ -36,11 +36,22 @@ class City {
      */
     public function find(string $cityName) : Array | bool
     {
-        $query = "SELECT * FROM tb_cidade WHERE cid_name=:cityName";
+        $query = "SELECT * FROM tb_cidade WHERE cid_nome=:cityName";
         $stmt = $this->connection->prepare($query);
         $stmt->bindValue(":cityName", $cityName);
         $stmt->execute();
         return $stmt->fetch();
+    }
+
+    /**
+     *Returns all the cities that are in the database
+     */
+    public function AllCities() : array
+    {
+        $query = "SELECT * FROM tb_cidade";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 
     /**
