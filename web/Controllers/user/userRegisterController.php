@@ -17,8 +17,8 @@
         list($username, $domain) = explode('@', $email);
 
         if (filter_var($email, FILTER_VALIDATE_EMAIL) && checkdnsrr($domain, 'MX')) {
-            $conn = Connection::getInstance();
-            $userModel = new UserModel($conn);
+            
+            $userModel = new UserModel(Connection::getInstance());
     
             $data = $userModel->find($email);
             
