@@ -48,7 +48,7 @@ class CityModel {
      */
     public function AllCities() : array
     {
-        $query = "SELECT * FROM tb_cidade";
+        $query = "SELECT * FROM tb_cidade ORDER BY cid_nome";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
