@@ -3,11 +3,11 @@
 use sql\Connection;
 use web\Models\CityModel;
 
-    if(auth\hasUse()) {
-        $userName = $_SESSION['userData']['usu_nome'];
-        $userName = explode(' ', $userName);
-        $userName = $userName[0];
-    }
+if(auth\hasUse()) {
+    $userName = $_SESSION['userData']['usu_nome'];
+    $userName = explode(' ', $userName);
+    $userName = $userName[0];
+}
 
     if(!empty($_GET['name'])) {
 
