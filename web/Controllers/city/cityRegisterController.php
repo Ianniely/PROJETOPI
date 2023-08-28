@@ -19,16 +19,16 @@
 
             //The city already exists in the database
             $result = false;
-            require_once 'web/Views/citySuperUser.php';
+           header('Location: /homeSuper');
 
         } else{
 
             //The city doesn't exists in the database
             $city->save($name, $population, $weather, $drescripition);
             $result = true;
-            require_once 'web/Views/citySuperUser.php';
+            header('Location: /homeSuper');
         }
     } else {
         $emptyData = true;
-        require_once 'web/Views/citySuperUser.php';
+        header('Location: /homeSuper');
     }

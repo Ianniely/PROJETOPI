@@ -31,33 +31,74 @@
         </div>
     </section>
 
-    <section id="cities" class="mb-10" onclick="showDiv(formCity)">
-        <div class="container mx-auto pt-10">
-            <?php foreach ($cities as $city): ?>
-                <div id="<?= $city['cid_nome'] ?>" class="city p-4 text-lg text-left w-full border rounded-md border-transparent hover:scale-105 transform ease-in-out hover:bg-gray-200">
+    <section class="mb-10">
+    <div class="container mx-auto pt-10">
+        <?php foreach ($cities as $city): ?>
+            <div id="<?= $city['cid_nome'] ?>" class="city p-4 text-lg text-left w-full border rounded-md border-transparent hover:scale-105 transform ease-in-out hover:bg-gray-200 flex items-center" data-city="<?= $city['cid_nome'] ?>" data-clima="<?= $city['cid_clima'] ?>" data-populacao="<?= $city['cid_populacao'] ?>" data-descricao="<?= $city['cid_descricao'] ?>">
+                <div onclick="showDiv(formUpdateCity)">
                     <h2 class="font-semibold"><?= $city['cid_nome'] ?></h2>
                     <p><?= substr($city['cid_descricao'], 0, 400) . '...' ?></p>
                 </div>
-            <?php endforeach; ?>
+                <div class="space-y-5">
+                    <button class="p-2" onclick="showDiv(formUpdateCity)"><span class="p-2 mt-1"><ion-icon name="pencil-outline"></ion-icon></span></button>
+                    <button class="p-2" onclick="showDiv(deleteCity)"><span class="pr-2"><ion-icon name="trash-outline"></ion-icon></span></button>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    </section>
+    
+    <section id="formCity" class="hidden z-40 fixed w-screen h-screen backdrop-blur-sm top-0 left-0">
+        <div class="bg-black-gd w-screen h-screen flex items-center justify-center">
+            <div class="bg-gray-100 w-1/2 border rounded-md shadow-md px-10 py-5">
+                <h2 class="text-gray-950 text-xl font-medium py-1">Casdastro de Cidade</h2>
+                <form action="/cityRegister" method="POST" class="flex flex-col space-y-3 mt-2">
+                    <input type="text" name="name" id="name" placeholder="Nome" class="border rounded-md p-2">
+                    <input type="text" name="population" id="population" placeholder="População" class="border rounded-md p-2">
+                    <textarea name="weather" id="weather" placeholder="Clima"  rows="4" cols="50" class="border rounded-md p-2"></textarea>
+                    <textarea id="drescripition" name="drescripition" placeholder="Descrição" rows="8" cols="50" class="border rounded-md p-2"></textarea>
+                    <div class="py-2">
+                        <button type="submit" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-blue-600 text-gray-50">Salvar Alterações</button>
+                        <a href="" type="button" onclick="showDiv(formCity)" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-gray-200 text-red-500">Cancelar</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
-    <section id="formCity" class="hidden z-40 absolute top-0 left-0">
-        <div class="w-screen h-screen backdrop-blur-sm">
-            <div class="bg-black-gd w-screen h-screen flex items-center justify-center">
-                <div class="bg-gray-100 w-1/2 border rounded-md shadow-md px-10 py-5">
-                    <h2 class="text-gray-950 text-xl font-medium py-1">Casdastro de Cidade</h2>
-                    <form action="/cityRegister" method="POST" class="flex flex-col space-y-3 mt-2">
-                        <input type="text" name="name" id="name" placeholder="Nome" class="border rounded-md p-2">
-                        <input type="text" name="population" id="population" placeholder="População" class="border rounded-md p-2">
-                        <input type="text" name="weather" id="weather" placeholder="Clima" class="border rounded-md p-2">
-                        <textarea id="drescripition" name="drescripition" placeholder="Descrição" rows="8" cols="50" class="border rounded-md p-2"></textarea>
-                        <div class="py-2">
-                            <button type="submit" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-blue-600 text-gray-50">Salvar Alterações</button>
-                            <a href="" type="button" onclick="showDiv(formCity)" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-gray-200 text-red-500">Cancelar</a>
-                        </div>
-                    </form>
-                </div>
+    <section id="formUpdateCity" class="hidden z-40 fixed w-screen h-screen backdrop-blur-sm top-0 left-0">
+        <div class="bg-black-gd w-screen h-screen flex items-center justify-center">
+            <div class="bg-gray-100 w-1/2 border rounded-md shadow-md px-10 py-5">
+                <h2 id="h22" class="text-gray-950 text-xl font-medium py-1">Atualizações de Cidade</h2>
+                <form action="/cityUpdate" method="POST" class="flex flex-col space-y-2 mt-2">
+                    <input type="hidden" name="originalCityName" id="originalCityName">
+                    <label for="nameCity">Nome</label>
+                    <input type="text" name="nameCity" id="nameCity" class="border rounded-md p-2">
+                    <label for="populationCity">População</label>
+                    <input type="text" name="populationCity" id="populationCity" placeholder="População" class="border rounded-md p-2">
+                    <label for="weatherCity">Clima</label>
+                    <textarea name="weatherCity" id="weatherCity" placeholder="Clima"  rows="4" cols="50" class="border rounded-md p-2"></textarea>
+                    <label for="drescripitionCity">Descrição</label>
+                    <textarea id="drescripitionCity" name="drescripitionCity" placeholder="Descrição" rows="8" cols="50" class="border rounded-md p-2"></textarea>
+                    <div class="py-2">
+                        <button type="submit" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-blue-600 text-gray-50">Salvar Alterações</button>
+                        <a href="" type="button" onclick="showDiv(formUpdateCity)" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-gray-200 text-red-500">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section id="deleteCity" class="hidden z-40 fixed w-screen h-screen backdrop-blur-sm top-0 left-0">
+        <div class="bg-black-gd w-screen h-screen flex items-center justify-center">
+        <div class="bg-gray-100 w-1/2 border rounded-md shadow-md px-10 py-5">
+                <h2 class="text-gray-950 text-xl font-medium py-1">Excluir Cidade</h2>
+                <p>Tem certeza de que deseja excluir essa cidade? Essa ação não pode ser desfeita e as cidades são elementos fundamentais para o funcionamento do site. Caso queira confirme o nome da cidade</p>
+                <form action="/cityDelete" method="POST">
+                    <input type="text" name="nameCity" id="nameCity" placeholder="Nome da cidade" class="border rounded-md p-2 w-96">
+                    <button type="submit" class="p-2 my-4 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-red-500 text-gray-50">Excluir</button>
+                    <a href="" onclick="showDiv(deleteCity)" class="p-2 border rounded-md border-transparent bg-gray-200 text-red-500">Cancelar</a>
+                </form>
             </div>
         </div>
     </section>
@@ -135,37 +176,37 @@
             return cleanString.toLowerCase();
         }
 
-    function searchCity() {
+        function searchCity() {
 
-        const searchInput = document.getElementById('searchCity').value;
-        const cleanedSearchInput = removeAccentsAndToLower(searchInput);
-        const cities = document.querySelectorAll('.city');
+            const searchInput = document.getElementById('searchCity').value;
+            const cleanedSearchInput = removeAccentsAndToLower(searchInput);
+            const cities = document.querySelectorAll('.city');
 
-        cities.forEach(city => {
-            const cityName = city.id;
-            const cleanedCityName = removeAccentsAndToLower(cityName);
-            if (cleanedCityName.includes(cleanedSearchInput)) {
-                city.style.display = 'block';
-            } else {
-                city.style.display = 'none';
+            cities.forEach(city => {
+                const cityName = city.id;
+                const cleanedCityName = removeAccentsAndToLower(cityName);
+                if (cleanedCityName.includes(cleanedSearchInput)) {
+                    city.style.display = 'block';
+                } else {
+                    city.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('searchCity').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                searchCity();
             }
         });
-    }
-
-    document.getElementById('searchCity').addEventListener('keyup', function(event) {
-        if (event.key === 'Enter') {
-            searchCity();
-        }
-    });
     
 </script>
 
 <script>
-    const header = document.querySelector('#header');
-    const cities = document.querySelector('#cities');
+    const deleteCity = document.querySelector('#deleteCity');
+    const formUpdateCity = document.querySelector('#formUpdateCity');
     const formCity = document.querySelector('#formCity');
 
-    let divs = [formCity];
+    let divs = [formCity, formUpdateCity, deleteCity];
 
     function showDiv(nameDiv)
     {
@@ -181,6 +222,31 @@
                 nameDiv.classList.remove('hidden');
             }
     }
+</script>
+<script>
+    const cityDivs = document.querySelectorAll('.city');
+
+    cityDivs.forEach(cityDiv => {
+        cityDiv.addEventListener('click', function() {
+            const cityName = cityDiv.getAttribute('data-city');
+            const clima = cityDiv.getAttribute('data-clima');
+            const populacao = cityDiv.getAttribute('data-populacao');
+            const descricao = cityDiv.getAttribute('data-descricao');
+            const nameCity = document.querySelector('#nameCity');
+            const populationCity = document.querySelector('#populationCity');
+            const weatherCity = document.querySelector('#weatherCity');
+            const drescripitionCity = document.querySelector('#drescripitionCity');
+            const originalCityName = document.querySelector('#originalCityName');
+
+            originalCityName.value = cityName;
+            nameCity.value = cityName;
+            populationCity.value = populacao;
+            weatherCity.value = clima;
+            drescripitionCity.value = descricao;
+
+           
+        });
+    });
 </script>
 </body>
 </html>

@@ -14,11 +14,7 @@
             A estação chuvosa em Natal ocorre entre os meses de março a julho. Durante esse período, a cidade recebe chuvas frequentes e intensas, contribuindo para o verde exuberante da paisagem. Os dias podem alternar entre sol e pancadas de chuva, mas a umidade permanece alta.
             
             Estação Seca:
-            A estação seca abrange os meses de agosto a fevereiro. Durante essa época, as chuvas são menos frequentes, e os dias costumam ser ensolarados e quentes. A brisa do mar ajuda a amenizar o calor, tornando o clima mais agradável, especialmente nas áreas litorâneas.
-            
-            A temperatura da água do mar em Natal também é bastante convidativa para os banhistas durante todo o ano, mantendo-se em torno de 26°C a 28°C. Isso contribui para que as praias sejam uma atração constante, permitindo que os visitantes aproveitem o mar quente e tranquilo.
-            
-            Em resumo, o clima de Natal, RN, é caracterizado por temperaturas quentes, alta umidade e presença constante da brisa do mar, o que proporciona um ambiente agradável para desfrutar das belezas naturais e das atividades ao ar livre que a cidade oferece.',
+            A estação seca abrange os meses de agosto a fevereiro. Durante essa época, as chuvas são menos frequentes, e os dias costumam ser ensolarados e quentes. A brisa do mar ajuda a amenizar o calor, tornando o clima mais agradável, especialmente nas áreas litorâneas.',
             'descrepition' => 'Natal, capital do Rio Grande do Norte, é uma cidade que combina a beleza natural das praias paradisíacas com a riqueza cultural de suas tradições locais. Com um clima tropical úmido, a cidade recebe calor e sol praticamente o ano todo, tornando-se um destino turístico popular.
 
             A cidade é conhecida por suas extensas faixas de areia dourada, onde visitantes e moradores podem desfrutar de dias ensolarados, praticar esportes aquáticos e contemplar belos entardeceres. As praias urbanas como Ponta Negra e Praia do Forte são pontos de encontro animados.
