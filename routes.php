@@ -16,5 +16,9 @@
    Router::get('/forgotPassword', 'web/Views/forgotPassword.php');
    Router::post('/forgotPassawordController', 'web/Controllers/user/userForgotPasswordController.php');
    Router::get('/controlPanel', 'web/Controllers/user/controlPanelController.php');
+   Router::get('/citys', 'web/Views/citys.php');
    Router::get('/city', 'web/Views/city.php');
    Router::post('/cityRegister', 'web/Controllers/city/cityRegisterController.php');
+   Router::post('/cityUpdate', 'web/Controllers/city/cityUpdateController.php');
+   Router::post('/cityDelete', 'web/Controllers/city/cityDeleteController.php');
+   Router::get('/sights', 'web/Views/sights.php');

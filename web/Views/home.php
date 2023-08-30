@@ -28,8 +28,8 @@
                     </div>
                     <ul class="space-x-5 lg:flex z-[1] lg:z-auto lg:static absolute bg-gray-200 text-gray-700 lg:text-white xl:text-white lg:bg-transparent w-full left-0 lg:w-auto lg:opacity-100 opacity-0">
                         <li><a href="/">Início</a></li>
-                        <li><a href="/pages">Pontos Turísticos</a></li>
-                        <li><a href="/city">Cidades</a></li>
+                        <li><a href="/sights">Pontos Turísticos</a></li>
+                        <li><a href="/citys">Cidades</a></li>
                         <li><a href="/anuciarEvento">Eventos</a></li>
                         <li><a href="/pages">Hospedagem</a></li>
                         <li><a href="/pages">Restaurantes</a></li>

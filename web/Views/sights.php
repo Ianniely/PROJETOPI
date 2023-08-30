@@ -8,13 +8,13 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="../../public/css/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../public/img/favicon.ico.png" type="image/x-icon">
-    <title><?php echo $resultQuery['cid_nome']; ?> - INSPIRERN</title>
+    <title>Pontos Turísticos - INSPIRERN</title>
 </head>
 <body>
 
     <!--header-->
 
-    <section class="bg-no-repeat bg-center bg-cover bg-fixed" style="background-image: url('../../public/img/citys/natal/foto _menu_carrocel_1.webp');">
+    <section class="carousel bg-[url('../img/caico-rn.png')] bg-no-repeat bg-center bg-cover bg-fixed">
         <div class="bg-black-gd">
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
@@ -64,152 +64,100 @@
     </section>
 
     <section class="bg-gray-50 pt-10">
-        <div class="container mx-auto">
-            <div>
-                <h1 class="text-5xl mt-10 pb-12"><?php echo $resultQuery['cid_nome']; ?></h1>
-                <div class="flex">
-                    <div class="w-3/4 text-lg space-y-4 text-justify mr-10">
-                    <?php
-                        $descricao = $resultQuery['cid_descricao'];
-                        $paragrafos = explode("\n", $descricao);
-
-                        foreach ($paragrafos as $paragrafo) {
-                            echo "<p>$paragrafo</p>";
-                        }
-                    ?>
-                    </div>
-                    <div class="w-1/4 space-y-12">
-                        <div>
-                            <span class="text-3xl"><ion-icon name="business-outline"></ion-icon></span>
-                            <h3 class="text-xl font-semibold">População</h3>
-                           <?php  echo ' <p class="text-lg text-black">'. $resultQuery['cid_populacao'].'</p>'; ?>
-                        </div>
-                        <div class="flex space-x-8">
-                            <div>
-                                <span class="text-3xl"><ion-icon name="partly-sunny-outline"></ion-icon></span>
-                                <h3 class="text-xl font-semibold">Clima</h3>
-                                <p>Tropical úmido</p>
-                            </div>
-                            <div>
-                                <span class="text-3xl"><ion-icon name="sunny-outline"></ion-icon></span>
-                                <h3 class="text-xl font-semibold">Cidade</h3>
-                                <p>Praiana</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
-            </div>
-    </section>
-
-    <section class="bg-gray-50 pt-10">
-        <div class="container mx-auto">
-            <h1 class="text-5xl mt-10 pb-12">Top 4 pontos em <?php echo $resultQuery['cid_nome'] ?></h1>
+        <div class="container mx-auto pb-10">
+            <h1 class="text-5xl mt-10 pb-12">Pontos Recomendadas para Você</h1>
         <div class="flex items-center space-x-5">
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/ponto-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Ponte</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Lagoa Azul</p>
             </div>
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/ponto-rn-1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Morro do Careca</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia do Golfinho</p>
             </div>
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/ponto-rn-2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Farol</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Igeja</p>
             </div>
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/ponto-rn-3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Reis Margos</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Trilha</p>
             </div>
         </div>
     </div>
-    </section>
-
-    <section class="bg-gray-50 pt-20">
-        <div class="container mx-auto">
-            <div class="flex">
-                <div class="mr-10">
-                        <img src="../../public/img/natal-rn-3.jpg" alt="cidade de natal" class="border rounded-md">
-                </div>
-                <div class="w-2/3 text-justify flex flex-col justify-center">
-                    <div>
-                        <h1 class="text-5xl pb-7 text-left">Clima</h1>
-                    </div>
-                    <div class="text-lg space-y-3 ">
-                        <?php
-                                $descricao = $resultQuery['cid_clima'];
-                                $paragrafos = explode("\n", $descricao);
-
-                                foreach ($paragrafos as $paragrafo) {
-                                    echo "<p>$paragrafo</p>";
-                                }
-                            ?>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="bg-gray-50 pt-10">
         <div class="container mx-auto pb-10">
-            <h1 class="text-5xl mt-10 pb-12">Top 4 Hotéis em <?php echo $resultQuery['cid_nome'] ?></h1>
+            <h1 class="text-5xl mt-10 pb-12">Pontos mais Avaliados</h1>
         <div class="flex items-center space-x-5">
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/Riodofogo-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">IBIS</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Rio do Fogo</p>
             </div>
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/macau-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Ilusion Hotel</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Macau</p>
             </div>
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/galinhos-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Natal Dunas</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Galinhos</p>
             </div>
             <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/touros-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Aquaria</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Touros</p>
             </div>
         </div>
     </div>
-    </section>   
+    </section>    
     
     <section class="bg-gray-50 pt-10">
         <div class="container mx-auto pb-10">
-            <h1 class="text-5xl mt-10 pb-12">Top 4 Restaurantes em <?php echo $resultQuery['cid_nome'] ?></h1>
-        <div class="flex items-center space-x-5">
-            <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Old Five</p>
-            </div>
-            <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Bandejão</p>
-            </div>
-            <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Camarão e Cia</p>
-            </div>
-            <div class="relative">
-                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Céu da Boca</p>
+            <div class="bg-[url('../img/mon.jpg')] bg-no-repeat bg-top bg-cover text-gray-50 text-lg p-5 flex flex-col border rounded-md border-transparent">
+                <p class="mt-16 mb-5">Aventura</p>
+                <h1 class="text-5xl mb-3">Seu Por do Sol Perfeito</h1>
+                <p class="mb-5">Vem conferir atividades de aventuras, trilhas e muito mais!</p>
+                <button class="bg-red-400 p-1 border border-transparent rounded-md w-28 mb-16">Ver mais</button>
             </div>
         </div>
-    </div>
-    </section> 
+        
+    </section>
+
+    <section class="bg-gray-50 pt-10">
+        <div class="container mx-auto pb-10">
+            <h1 class="text-5xl mt-10 pb-12">Top 4 Pontos</h1>
+            <div class="flex items-center space-x-5">
+                <div class="relative">
+                    <img src="../../public/img/Restaurante-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                    <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Restaurantes</p>
+                </div>
+                <div class="relative">
+                    <img src="../../public/img/pousada-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                    <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Pousadas</p>
+                </div>
+                <div class="relative">
+                    <img src="../../public/img/cidade-natal.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                    <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Cidades</p>
+                </div>
+                <div class="relative">
+                    <img src="../../public/img/ponte-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                    <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Pontos Turisticos</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-gray-50 pt-20">
         <div class="bg-gray-700 p-8">
@@ -267,6 +215,10 @@
             </div>
         </div>
     </footer>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7aa27JvzYih3S2sfNUaIuhPFQUZiDRek&callback=initMap&libraries=places&v=weekly"
+    defer
+  ></script>
   <script>
         function Menu(e) {
             let list = document.querySelector('ul');
@@ -277,6 +229,66 @@
             var submenu = document.querySelector('.group > .absolute');
             submenu.classList.toggle('hidden');
         }
+    </script>
+  <script>
+        // Dados das cidades (substitua com suas próprias informações)
+        const citiesData = [
+        { name: "Natal", lat: -5.7945, lng: -35.211 },
+        { name: "Mossoró", lat: -5.1879, lng: -37.3443 },
+        { name: "Caicó", lat: -6.4583, lng: -37.0955 },
+        { name: "São Miguel do Gostoso", lat: -5.1234, lng: -35.6358 },
+        { name: "Martins", lat: -6.0826, lng: -37.9082 },
+        { name: "Santa Cruz", lat: -6.2254, lng: -36.019 },
+        { name: "Pipa", lat: -6.2313, lng: -35.0552 },
+        { name: "Rio do Fogo", lat: -5.2725, lng: -35.3799 },
+        ];
+
+        function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -5.7945, lng: -35.211 }, // Coordenadas iniciais do mapa
+            zoom: 8,
+        });
+
+        // Adicionar informações interativas para cada cidade
+        citiesData.forEach((city) => {
+            const cityMarker = new google.maps.Marker({
+            position: { lat: city.lat, lng: city.lng },
+            map: map,
+            title: city.name,
+            });
+
+            // Adicionar evento mouseover para exibir informações da cidade
+            cityMarker.addListener("mouseover", () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: city.name,
+            });
+            infoWindow.open(map, cityMarker);
+            });
+
+            // Adicionar evento click para redirecionar para a página da cidade
+            cityMarker.addListener("click", () => {
+            // Redirecionar para a página da cidade (substitua com seu próprio URL)
+            window.location.href = '/city';
+            });
+        });
+        }
+  </script>
+    <script>
+        const images = [
+          "../../public/img/caico-rn.png",
+          "../../public/img/natal-rn-2.jpg",
+          "../../public/img/caico-rn-3.jpg",
+        ];
+      
+        const carousel = document.querySelector(".carousel");
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            carousel.style.backgroundImage = `url('${images[currentIndex]}')`;
+        }
+
+        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
     </script>
 </body>
 </html>
