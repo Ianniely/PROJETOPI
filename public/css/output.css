@@ -687,6 +687,10 @@ video {
   margin-right: 0.75rem;
 }
 
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1255,6 +1259,8 @@ video {
   padding-top: 1.25rem;
 }
 
+<<<<<<< HEAD
+=======
 .pt-16 {
   padding-top: 4rem;
 }
@@ -1263,6 +1269,7 @@ video {
   padding-bottom: 1.75rem;
 }
 
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
 .text-left {
   text-align: left;
 }

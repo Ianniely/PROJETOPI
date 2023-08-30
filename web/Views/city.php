@@ -14,7 +14,11 @@
 
     <!--header-->
 
+<<<<<<< HEAD
+    <section class="bg-no-repeat bg-center bg-cover bg-fixed" style="background-image: url('../../public/img/citys/natal/foto _menu_carrocel_1.webp');">
+=======
     <section class="carousel bg-[url('../img/pipa-rn.webp')] bg-no-repeat bg-center bg-cover bg-fixed">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
         <div class="bg-black-gd">
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
@@ -107,22 +111,34 @@
             <h1 class="text-5xl mt-10 pb-12">Top 4 pontos em <?php echo $resultQuery['cid_nome'] ?></h1>
         <div class="flex items-center space-x-5">
             <div class="relative">
-                <img src="../../public/img/natal-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Ponte</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/cidade-natal.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Morro do Careca</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/galinhos-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Farol</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_pontos_4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/ponte-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Reis Margos</p>
             </div>
@@ -160,22 +176,38 @@
             <h1 class="text-5xl mt-10 pb-12">Top 4 Hotéis em <?php echo $resultQuery['cid_nome'] ?></h1>
         <div class="flex items-center space-x-5">
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/hotel-natal.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">IBIS</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/hotel-natal-1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Ilusion Hotel</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/hotel-natal-2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Natal Dunas</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_hoteis_4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/hotel-natal-3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Aquaria</p>
             </div>
@@ -188,24 +220,42 @@
             <h1 class="text-5xl mt-10 pb-12">Top 4 Restaurantes em <?php echo $resultQuery['cid_nome'] ?></h1>
         <div class="flex items-center space-x-5">
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/restaurante-natal.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Old Five</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/restaurante-natal-1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Bandejão</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+=======
                 <img src="../../public/img/restaurante-natal-2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Camarão e Cia</p>
             </div>
             <div class="relative">
+<<<<<<< HEAD
+                <img src="../../public/img/citys/<?php echo $resultQuery['cid_nome'] ?>/foto_top4_restaurantes_4.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
+                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Céu da Boca</p>
+=======
                 <img src="../../public/img/restaurante-natal-3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
                 <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Céu da Bocas</p>
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
             </div>
         </div>
     </div>
@@ -278,6 +328,8 @@
             submenu.classList.toggle('hidden');
         }
     </script>
+<<<<<<< HEAD
+=======
     <script>
         const images = [
           "../../public/img/pipa.jpg",
@@ -295,5 +347,6 @@
 
         setInterval(showNextSlide, 5000); // Change slide every 5 seconds
     </script>
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
 </body>
 </html>

@@ -3,6 +3,15 @@
 use sql\Connection;
 use web\Models\CityModel;
 
+<<<<<<< HEAD
+$newNameCity = $_POST['nameCity'];
+
+$cityModel = new CityModel(Connection::getInstance());
+$resultQuery = $cityModel->find($newNameCity);
+
+if($resultQuery) {
+
+=======
 $originalCityName = $_POST['originalCityName'];
 
 $cityModel = new CityModel(Connection::getInstance());
@@ -11,6 +20,7 @@ $resultQuery = $cityModel->find($originalCityName);
 if($resultQuery) {
 
     $newNameCity = $_POST['nameCity'];
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
     $newPopulationCity = $_POST['populationCity'];
     $newWeatherCity = $_POST['weatherCity'];
     $newDrescripitionCity = $_POST['drescripitionCity'];
