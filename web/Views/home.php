@@ -182,7 +182,7 @@
     </section>
       <section class="bg-gray-50 pt-10">
         <div class="container mx-auto pb-20 flex">
-            <div class="bg-sky-400 border rounded-md border-transparent border-r-0 rounded-r-none p-5 pl-20 drop-shadow-md">
+            <div class="bg-sky-400 border rounded-md border-transparent border-r-0 rounded-r-none p-5 px-10 drop-shadow-md flex justify-center items-center">
                 <div>
                     <h2 class="text-white text-3xl mb-5">Pesquise por onde quer navegar</h2>
                     <p class="text-gray-50">Pesquise por cidades dos seus interesse, ou por pontos turisticos que mais de chama a atenção. Descubra um mundo novo aqui no INSPIRERN</p>
@@ -266,7 +266,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-gray-900 pt-10">
+    <section class="bg-gray-900 pt-10 flex flex-col justify-center items-center">
         <div class="container mx-auto flex space-x-5">
             <div class="space-y-5">
                 <img src="../../public/img/mapa.jpeg" alt="Mapa do RN" class="border rounded-md border-transparent">

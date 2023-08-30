@@ -241,7 +241,12 @@
             // Adicionar evento click para redirecionar para a página da cidade
             cityMarker.addListener("click", () => {
             // Redirecionar para a página da cidade (substitua com seu próprio URL)
+<<<<<<< HEAD
             window.location.href = '/city';
+=======
+                const cityName = encodeURIComponent(city.name);
+                window.location.href = `/city?name=${cityName}`;
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
             });
         });
         }

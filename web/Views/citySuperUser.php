@@ -70,10 +70,22 @@
         <div class="bg-black-gd w-screen h-screen flex items-center justify-center">
             <div class="bg-gray-100 w-1/2 border rounded-md shadow-md px-10 py-5">
                 <h2 id="h22" class="text-gray-950 text-xl font-medium py-1">Atualizações de Cidade</h2>
+<<<<<<< HEAD
                 <form action="/cityUpdate" method="POST" class="flex flex-col space-y-3 mt-2">
                     <input type="text" name="nameCity" id="nameCity" placeholder="Nome" class="border rounded-md p-2">
                     <input type="text" name="populationCity" id="populationCity" placeholder="População" class="border rounded-md p-2">
                     <textarea name="weatherCity" id="weatherCity" placeholder="Clima"  rows="4" cols="50" class="border rounded-md p-2"></textarea>
+=======
+                <form action="/cityUpdate" method="POST" class="flex flex-col space-y-2 mt-2">
+                    <input type="hidden" name="originalCityName" id="originalCityName">
+                    <label for="nameCity">Nome</label>
+                    <input type="text" name="nameCity" id="nameCity" class="border rounded-md p-2">
+                    <label for="populationCity">População</label>
+                    <input type="text" name="populationCity" id="populationCity" placeholder="População" class="border rounded-md p-2">
+                    <label for="weatherCity">Clima</label>
+                    <textarea name="weatherCity" id="weatherCity" placeholder="Clima"  rows="4" cols="50" class="border rounded-md p-2"></textarea>
+                    <label for="drescripitionCity">Descrição</label>
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
                     <textarea id="drescripitionCity" name="drescripitionCity" placeholder="Descrição" rows="8" cols="50" class="border rounded-md p-2"></textarea>
                     <div class="py-2">
                         <button type="submit" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-blue-600 text-gray-50">Salvar Alterações</button>
@@ -231,6 +243,12 @@
             const populationCity = document.querySelector('#populationCity');
             const weatherCity = document.querySelector('#weatherCity');
             const drescripitionCity = document.querySelector('#drescripitionCity');
+<<<<<<< HEAD
+=======
+            const originalCityName = document.querySelector('#originalCityName');
+
+            originalCityName.value = cityName;
+>>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
             nameCity.value = cityName;
             populationCity.value = populacao;
             weatherCity.value = clima;
