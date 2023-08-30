@@ -14,7 +14,7 @@
 
     <!--header-->
 
-    <section class="carousel bg-[url('../img/caico-rn.png')] bg-no-repeat bg-center bg-cover bg-fixed">
+    <section class="carousel bg-[url('../img/foto_ponto_menu_1.jpg')] bg-no-repeat bg-bottom bg-cover bg-fixed">
         <div class="bg-black-gd">
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
@@ -54,9 +54,9 @@
                     </ul>
                 </nav>
                 <div class="mt-12">
-                    <h1 class="text-7xl mt-28 mb-7">Conheça as cidades do Potiguar!</h1>
+                    <h1 class="text-7xl mt-28 mb-7">Pontos Turísticos</h1>
                     <div>
-                    <p class="text-lg pb-40 ">Explore as cidades encantadoras do Rio Grande do Norte, cada uma com sua própria história, cultura vibrante e beleza natural única. De praias deslumbrantes a ricos patrimônios históricos, mergulhe nas experiências autênticas que cada localidade tem a oferecer.</p>
+                    <p class="text-lg pb-40 ">Explore as maravilhas naturais e culturais do Rio Grande do Norte.<br>Descubra praias deslumbrantes, locais históricos e experiências inesquecíveis que essa região tem a oferecer.</p>
                     </div>
                 </div>
             </header>
@@ -273,22 +273,5 @@
         });
         }
   </script>
-    <script>
-        const images = [
-          "../../public/img/caico-rn.png",
-          "../../public/img/natal-rn-2.jpg",
-          "../../public/img/caico-rn-3.jpg",
-        ];
-      
-        const carousel = document.querySelector(".carousel");
-        let currentIndex = 0;
-
-        function showNextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            carousel.style.backgroundImage = `url('${images[currentIndex]}')`;
-        }
-
-        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
-    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 
     <!--header-->
 
-    <section class="carousel bg-[url('../img/caico-rn.png')] bg-no-repeat bg-center bg-cover bg-fixed">
+    <section class="bg-[url('../img/foto_cidade_menu_1.jpeg')] bg-no-repeat bg-center bg-cover bg-fixed">
         <div class="bg-black-gd">
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
@@ -61,9 +61,9 @@
                     </ul>
                 </nav>
                 <div class="mt-12">
-                    <h1 class="text-7xl mt-28 mb-7">Conheça as cidades do Potiguar!</h1>
+                    <h1 class="text-7xl mt-28 mb-7">Cidades do Potiguar!</h1>
                     <div>
-                    <p class="text-lg pb-40 ">Explore as cidades encantadoras do Rio Grande do Norte, cada uma com sua própria história, cultura vibrante e beleza natural única. De praias deslumbrantes a ricos patrimônios históricos, mergulhe nas experiências autênticas que cada localidade tem a oferecer.</p>
+                    <p class="text-lg pb-40 ">Descubra a diversidade e a beleza das cidades do Rio Grande do Norte. Explore a cultura única,<br>a hospitalidade calorosa e as experiências memoráveis que cada cidade tem a oferecer.</p>
                     </div>
                 </div>
             </header>
@@ -241,32 +241,11 @@
             // Adicionar evento click para redirecionar para a página da cidade
             cityMarker.addListener("click", () => {
             // Redirecionar para a página da cidade (substitua com seu próprio URL)
-<<<<<<< HEAD
-            window.location.href = '/city';
-=======
                 const cityName = encodeURIComponent(city.name);
                 window.location.href = `/city?name=${cityName}`;
->>>>>>> d5949f0e2d034cc7078a1ad8f1b475b2e67f884e
             });
         });
         }
   </script>
-    <script>
-        const images = [
-          "../../public/img/caico-rn.png",
-          "../../public/img/natal-rn-2.jpg",
-          "../../public/img/caico-rn-3.jpg",
-        ];
-      
-        const carousel = document.querySelector(".carousel");
-        let currentIndex = 0;
-
-        function showNextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            carousel.style.backgroundImage = `url('${images[currentIndex]}')`;
-        }
-
-        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
-    </script>
 </body>
 </html>

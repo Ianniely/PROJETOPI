@@ -17,7 +17,7 @@
 
     <!--header-->
 
-    <section class="carousel bg-[url('../img/por-do-sol-praia.jpg')] bg-no-repeat bg-center bg-cover bg-fixed">
+    <section class=" bg-[url('../img/por-do-sol-praia.jpg')] bg-no-repeat bg-center bg-cover bg-fixed">
         <div class="bg-black-gd">
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
@@ -381,23 +381,6 @@
             submenu.classList.toggle('hidden');
         }
     </script>
-    <script>
-        const images = [
-          "../../public/img/por-do-sol-praia.jpg",
-          "../../public/img/mon.jpg"
-        ];
-      
-        const carousel = document.querySelector(".carousel");
-        let currentIndex = 0;
-
-        function showNextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            carousel.style.backgroundImage = `url('${images[currentIndex]}')`;
-        }
-
-        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
-    </script>
-      
     <script>
         function initMap() {
           const map = new google.maps.Map(document.getElementById("map"), {
