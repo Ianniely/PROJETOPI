@@ -895,10 +895,22 @@ video {
   margin-left: calc(7rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
@@ -929,6 +941,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1067,8 +1085,16 @@ video {
   background-image: url('../img/Newton_Navarro_Bridge_Natal_Brazil.jpg');
 }
 
-.bg-\[url\(\'\.\.\/img\/caico-rn\.png\'\)\] {
-  background-image: url('../img/caico-rn.png');
+.bg-\[url\(\'\.\.\/img\/foto_cidade_menu_1\.jpeg\'\)\] {
+  background-image: url('../img/foto_cidade_menu_1.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/img\/foto_ponto_menu_02\.jpeg\'\)\] {
+  background-image: url('../img/foto_ponto_menu_02.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/img\/foto_ponto_menu_1\.jpg\'\)\] {
+  background-image: url('../img/foto_ponto_menu_1.jpg');
 }
 
 .bg-\[url\(\'\.\.\/img\/megulho\.jpg\'\)\] {
@@ -1083,52 +1109,8 @@ video {
   background-image: url('../img/por-do-sol-praia.jpg');
 }
 
-.bg-\[url\(\'\.\.\/img\/praia1\.jpg\'\)\] {
-  background-image: url('../img/praia1.jpg');
-}
-
 .bg-\[url\(\'\.\.\/img\/praias-rj\.jpg\'\)\] {
   background-image: url('../img/praias-rj.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/1918103\.jpg\'\)\] {
-  background-image: url('../img/1918103.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/c\:\\Users\\danta\\Downloads\\foto_ponto_menu_1\.jpg\.jpg\'\)\] {
-  background-image: url('../img/c:\Users\danta\Downloads\foto_ponto_menu_1.jpg.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/c\:\\Users\\danta\\Downloads\\foto_ponto_menu_1\.jpg\'\)\] {
-  background-image: url('../img/c:\Users\danta\Downloads\foto_ponto_menu_1.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_ponto_menu_1\.jpg\'\)\] {
-  background-image: url('../img/foto_ponto_menu_1.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_cidade_menu_1\.jpg\'\)\] {
-  background-image: url('../img/foto_cidade_menu_1.jpg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_cidade_menu_1\.jpeg\'\)\] {
-  background-image: url('../img/foto_cidade_menu_1.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_cidade_menu_2\.jpeg\'\)\] {
-  background-image: url('../img/foto_cidade_menu_2.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_home_menu_1\.jpeg\'\)\] {
-  background-image: url('../img/foto_home_menu_1.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_home_menu_2\.jpeg\'\)\] {
-  background-image: url('../img/foto_home_menu_2.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/img\/foto_home_menu_3\.jpeg\'\)\] {
-  background-image: url('../img/foto_home_menu_3.jpeg');
 }
 
 .bg-cover {
@@ -1139,24 +1121,16 @@ video {
   background-attachment: fixed;
 }
 
+.bg-bottom {
+  background-position: bottom;
+}
+
 .bg-center {
   background-position: center;
 }
 
 .bg-top {
   background-position: top;
-}
-
-.bg-right {
-  background-position: right;
-}
-
-.bg-bottom {
-  background-position: bottom;
-}
-
-.bg-left {
-  background-position: left;
 }
 
 .bg-no-repeat {
@@ -1293,6 +1267,10 @@ video {
 
 .pt-36 {
   padding-top: 9rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-left {
@@ -1434,6 +1412,16 @@ video {
   color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1484,6 +1472,12 @@ video {
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

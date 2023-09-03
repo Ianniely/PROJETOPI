@@ -116,6 +116,7 @@
                     <?php 
                         if($_SESSION['userData']['usu_tipo'] == 'super') {
                             echo "<a class='hover:underline' href='/homeSuper'>Configurações de Cidades</a>";
+                            echo "<a class='hover:underline' href='/homeSeghtsSuper'>Configurações de Pontos Turísticos</a>";
                         }
                     ?>
 

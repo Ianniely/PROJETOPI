@@ -8,13 +8,13 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link href="../../public/css/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../public/img/favicon.ico.png" type="image/x-icon">
-    <title>Pontos Turísticos - INSPIRERN</title>
+    <title><?php echo $resultQuery['pon_nome'];?> - INSPIRERN</title>
 </head>
 <body>
 
     <!--header-->
 
-    <section class="carousel bg-[url('../img/foto_ponto_menu_1.jpg')] bg-no-repeat bg-bottom bg-cover bg-fixed">
+    <section class="carousel bg-[url('../img/foto_ponto_menu_02.jpeg')] bg-no-repeat bg-center bg-cover bg-fixed">
         <div class="bg-black-gd">
           <header class="container mx-auto text-white">
                 <nav class="lg:flex lg:justify-between lg:items-center h-24 text-lg">
@@ -54,9 +54,9 @@
                     </ul>
                 </nav>
                 <div class="mt-12">
-                    <h1 class="text-7xl mt-28 mb-7">Pontos Turísticos</h1>
+                    <h1 class="text-7xl mt-28 mb-7"><?php echo $resultQuery['pon_nome'];?></h1>
                     <div>
-                    <p class="text-lg pb-40 ">Explore as maravilhas naturais e culturais do Rio Grande do Norte.<br>Descubra praias deslumbrantes, locais históricos e experiências inesquecíveis que essa região tem a oferecer.</p>
+                    <p class="text-lg pb-40 ">Explore este incrível ponto turístico no Rio Grande do Norte e mergulhe em uma experiência<br> que combina história, beleza natural e cultura. Descubra por que este lugar é imperdível em sua visita à região.</p>
                     </div>
                 </div>
             </header>
@@ -64,96 +64,120 @@
     </section>
 
     <section class="bg-gray-50 pt-10">
-        <div class="container mx-auto pb-10">
-            <h1 class="text-5xl mt-10 pb-12">Pontos Recomendadas para Você</h1>
-        <div class="flex items-center space-x-5">
-            <div class="relative hover:scale-110 transform ease-in-out">
-                <img src="../../public/img/ponto-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Morro do Careca</p>
-            </div>
-            <div class="relative hover:scale-110 transform ease-in-out">
-                <img src="../../public/img/ponto-rn-1.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia das Tartarugas</p>
-            </div>
-            <div class="relative hover:scale-110 transform ease-in-out">
-                <img src="../../public/img/ponto-rn-2.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Cachoeira da Serra</p>
-            </div>
-            <div class="relative hover:scale-110 transform ease-in-out">
-                <img src="../../public/img/ponto-rn-3.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
-                <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia de Genipabu</p>
+        <div class="container mx-auto">
+            <div class="flex">
+                <div class="w-1/2">
+                    <h1 class="text-5xl mt-10 pb-12"><?php echo $resultQuery['pon_nome'];?></h1>
+                    <div class="space-y-20">
+                        <div>
+                            <span class="text-3xl"><ion-icon name="location-outline"></ion-icon></span>
+                            <h3 class="text-xl font-semibold">Localização</h3>
+                            <p class="text-lg text-black">Situado na <?php echo $resultQuery['pon_rua'];?>, <?php echo $resultQuery['pon_bairro'];?></p>
+                        </div>
+                        <div class="flex space-x-20">
+                            <div>
+                                <span class="text-3xl"><ion-icon name="star-half-outline"></ion-icon></span>
+                                <h3 class="text-xl font-semibold">Classificação</h3>
+                                <p class="text-lg text-yellow-500"><?php echo $resultQuery['pon_classificacao'];?></p>
+                            </div>
+                            <div>
+                                <span class="text-3xl"><ion-icon name="cash-outline"></ion-icon></span>
+                                <h3 class="text-xl font-semibold">Preço</h3>
+                                <p class="text-lg text-green-600">Gratuito</p>
+                            </div>
+                            <div>
+                                <span class="text-3xl"><ion-icon name="accessibility-outline"></ion-icon></span>
+                                <h3 class="text-xl font-semibold">Acessibilidade</h3>
+                                <?php 
+                                    if($resultQuery['pon_acessibilidade'] == 'disponivel') {
+                                      echo  "<p class='text-lg text-green-600'>".$resultQuery['pon_acessibilidade']."</p>";
+                                    } else {
+                                        echo  "<p class='text-lg text-red-600'>".$resultQuery['pon_acessibilidade']."</p>";
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-1/2">
+                        <img src="../../public/img/foto_01.svg" alt="">
+                </div>
             </div>
         </div>
-    </div>
     </section>
 
-    <section class="bg-gray-50 pt-10">
+    <section class="bg-gray-50 pt-1">
         <div class="container mx-auto pb-10">
-            <h1 class="text-5xl mt-10 pb-12">Pontos mais Avaliados</h1>
+            <h1 class="text-5xl mt-10 pb-12">Restaurantes Proximos</h1>
         <div class="flex items-center space-x-5">
-            <div class="relative hover:scale-110 transform ease-in-out">
+            <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                 <img src="../../public/img/Riodofogo-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Cachoeira da Serra</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Rio do Fogo</p>
             </div>
-            <div class="relative hover:scale-110 transform ease-in-out">
+            <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                 <img src="../../public/img/macau-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia de Genipabu</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Macau</p>
             </div>
-            <div class="relative hover:scale-110 transform ease-in-out">
+            <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                 <img src="../../public/img/galinhos-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Morro do Careca</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Galinhos</p>
             </div>
-            <div class="relative hover:scale-110 transform ease-in-out">
+            <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                 <img src="../../public/img/touros-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                 <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia das Tartarugas</p>
+                <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Touros</p>
             </div>
         </div>
     </div>
-    </section>    
+    </section>   
     
     <section class="bg-gray-50 pt-10">
         <div class="container mx-auto pb-10">
-            <div class="bg-[url('../img/mon.jpg')] bg-no-repeat bg-top bg-cover text-gray-50 text-lg p-5 flex flex-col border rounded-md border-transparent">
-                <p class="mt-16 mb-5">Aventura</p>
-                <h1 class="text-5xl mb-3">Seu Por do Sol Perfeito</h1>
-                <p class="mb-5">Vem conferir atividades de aventuras, trilhas e muito mais!</p>
-                <button class="bg-red-400 p-1 border border-transparent rounded-md w-28 mb-16">Ver mais</button>
-            </div>
-        </div>
-        
-    </section>
-
-    <section class="bg-gray-50 pt-10">
-        <div class="container mx-auto pb-10">
-            <h1 class="text-5xl mt-10 pb-12">Top 4 Pontos</h1>
+            <h1 class="text-5xl mt-10 pb-12">Hoteis Proximos</h1>
             <div class="flex items-center space-x-5">
-                <div class="relative hover:scale-110 transform ease-in-out">
+                <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                     <img src="../../public/img/Restaurante-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                     <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia de Genipabu</p>
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Restaurantes</p>
                 </div>
-                <div class="relative hover:scale-110 transform ease-in-out">
+                <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                     <img src="../../public/img/pousada-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                     <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Praia das Tartarugas</p>
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Pousadas</p>
                 </div>
-                <div class="relative hover:scale-110 transform ease-in-out">
+                <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                     <img src="../../public/img/cidade-natal.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                     <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Morro do Careca</p>
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Cidades</p>
                 </div>
-                <div class="relative hover:scale-110 transform ease-in-out">
+                <div class="relative hover:scale-110 transform ease-in-out" data-url="/sight">
                     <img src="../../public/img/ponte-rn.jpg" alt="" class="border rounded-md border-transparent drop-shadow-md">
                     <img src="../../public/img/sombra.png" alt="" class="absolute bottom-0 border rounded-md border-transparent">
-                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Parrachos de Maracajaú</p>
+                    <p class="absolute bottom-0 left-0 p-2 text-gray-50 text-3xl border rounded-md border-transparent">Pontos Turisticos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="bg-gray-50 pt-10">
+        <div class="container mx-auto">
+            <div>
+                <h1 class="text-5xl mt-10 pb-12"><?php echo $resultQuery['pon_nome']; ?></h1>
+                <div class="flex">
+                        <div class="w-3/4 text-lg space-y-4 text-justify mr-10">
+                            <?php
+                                $descricao = $resultQuery['pon_descricao'];
+                                $paragrafos = explode("\n", $descricao);
+
+                                foreach ($paragrafos as $paragrafo) {
+                                    echo "<p>$paragrafo</p>";
+                                }
+                            ?>
+                        </div>
                 </div>
             </div>
         </div>
@@ -273,19 +297,5 @@
         });
         }
   </script>
-  <script>
-     const divs = document.querySelectorAll('.relative');
-
-// Adicionar um evento de clique a cada div
-divs.forEach(div => {
-    div.addEventListener('click', () => {
-        // Obter o nome do ponto turístico a partir do elemento p dentro da div clicada
-        const name = div.querySelector('p').textContent;
-        
-        // Redirecionar para a página /sight com o nome do ponto na URI
-        window.location.href = `/sight?name=${encodeURIComponent(name)}`;
-    });
-});
-</script>
 </body>
 </html>
