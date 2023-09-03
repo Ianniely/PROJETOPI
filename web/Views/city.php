@@ -54,9 +54,9 @@
                     </ul>
                 </nav>
                 <div class="mt-12">
-                    <h1 class="text-7xl mt-28 mb-7">Conheça as cidades do Potiguar!</h1>
+                    <h1 class="text-7xl mt-28 mb-7">Conheça <?php echo $resultQuery['cid_nome']; ?></h1>
                     <div>
-                    <p class="text-lg pb-40 ">Explore as cidades encantadoras do Rio Grande do Norte, cada uma com sua própria história, cultura vibrante e beleza natural única. De praias deslumbrantes a ricos patrimônios históricos, mergulhe nas experiências autênticas que cada localidade tem a oferecer.</p>
+                    <p class="text-lg pb-40 ">Explore a beleza e os encantos desta cidade única no Rio Grande do Norte.<br>Descubra uma fusão de cultura, história e hospitalidade que tornam este destino verdadeiramente especial.</p>
                     </div>
                 </div>
             </header>

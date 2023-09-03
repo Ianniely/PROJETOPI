@@ -1,16 +1,17 @@
 <?php 
 use sql\Connection;
-use web\Models\CityModel;
+use web\Models\SightsModel;
 
 if(auth\hasUse()) {
     $userName = $_SESSION['userData']['usu_nome'];
     $userName = explode(' ', $userName);
     $userName = $userName[0];
 
-    $cityModel = new CityModel(Connection::getInstance());
-    $cities = $cityModel->AllCities();
-
-    require 'web/Views/citySuperUser.php';
+    $conn = Connection::getInstance();
+    $SightsModel = new SightsModel($conn);
+    $sights = $SightsModel->AllSights();
+    
+    require 'web/Views/sightsSuperUser.php';
 } else {
     require 'web/Views/home.php';
 }

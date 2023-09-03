@@ -156,7 +156,7 @@ class UserModel
         /**
          * Receives the user id and deletes the column in the database corresponding to it.
          */
-        public function delete(string $idUser) : bool
+        public function delete(int $idUser) : bool
         {
             $query = "DELETE FROM tb_usuario WHERE usu_id=:idUser";   
             $stmt = $this->connection->prepare($query);
