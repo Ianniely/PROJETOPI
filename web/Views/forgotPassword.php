@@ -11,9 +11,9 @@
 </head>
 <body>
     <section class="bg-gray-50 flex h-screen w-screen">
-        <a href="/login" class="absolute left-0 top-0 p-4 m-4 text-3xl hover:bg-gray-200 border rounded-md border-transparent hover:scale-105 transition duration-150 ease-in-out">
+        <button onclick="goBack()" class="absolute left-0 top-0 p-4 m-4 text-3xl hover:bg-gray-200 border rounded-md border-transparent hover:scale-105 transition duration-150 ease-in-out">
             <ion-icon name="arrow-back-outline"></ion-icon>
-        </a>
+        </button>
         <div class="container mx-auto flex items-center justify-center">
             <div id="formForgotPassWord" class="bg-gray-200 border rounded-md w-1/2 p-10 flex flex-col text-center items-center space-y-10">
                 <h1 id="titulo" class="text-sky-950 text-5xl text-center">Recuperar senha</h1>
@@ -53,6 +53,11 @@
                     if(nameDiv.classList.contains('hidden')) {
                         nameDiv.classList.remove('hidden');
                     }
+            }
+        </script>
+        <script>
+            function goBack() {
+                window.history.back();
             }
         </script>
 

@@ -11,9 +11,9 @@
 </head>
 <body>
     <section class="bg-gray-50 flex h-screen w-screen">
-        <a href="/" class="absolute left-0 top-0 p-4 m-4 text-3xl hover:bg-gray-200 border rounded-md border-transparent hover:scale-105 transition duration-150 ease-in-out">
+        <button onclick="goBack()" class="absolute left-0 top-0 p-4 m-4 text-3xl hover:bg-gray-200 border rounded-md border-transparent hover:scale-105 transition duration-150 ease-in-out">
             <ion-icon name="arrow-back-outline"></ion-icon>
-        </a>
+        </button>
         <div class="m-auto">
             
                 <h1 id="titulo" class="text-sky-950 text-5xl text-center pb-10">Entrar</h1>
@@ -116,6 +116,11 @@
                 feedback.classList.add('bg-gray-600');
             }
         }*/
+    </script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
     </script>
      <?php 
         if(!empty($incorrectRegister) || !empty($emptyRegister)) {

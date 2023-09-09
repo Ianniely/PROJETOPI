@@ -117,13 +117,14 @@
                         if($_SESSION['userData']['usu_tipo'] == 'super') {
                             echo "<a class='hover:underline' href='/homeSuper'>Configurações de Cidades</a>";
                             echo "<a class='hover:underline' href='/homeSeghtsSuper'>Configurações de Pontos Turísticos</a>";
+                            echo "<a class='hover:underline' href='/homeRestaurantSuper'>Configurações de Restaurantes</a>";
                         }
                     ?>
 
                 </div>
             </div>
         </div>
-        <a href="/" class="text-4xl mt-7 h-10"><span><ion-icon name="close-outline"></ion-icon></span></a>
+        <a href="/" class="text-4xl mt-7 h-10 border rounded-md border-transparent hover:scale-125 transform ease-in-out hover:bg-gray-200 hover:text-gray-600"><span><ion-icon name="close-outline"></ion-icon></span></a>
     </div>
         <div id="cardEditeData" class="w-screen h-screen z-40 absolute backdrop-blur-sm top-0 left-0">
             <div class="bg-black-gd w-screen h-screen flex items-center justify-center">
