@@ -8,6 +8,7 @@
    Router::get('/', 'web/Controllers/homeController.php');
    Router::get('/homeSuper', 'web/Controllers/city/citySuperUserController.php');
    Router::get('/homeSeghtsSuper', 'web/Controllers/sights/sightsSuperUserController.php');
+   Router::get('/homeRestaurantSuper', 'web/Controllers/restaurants/restaurantsSuperUserController.php');
    Router::get('/login', 'web/Views/login.php');
    Router::post('/loginController', 'web/Controllers/user/userLoginController.php');
    Router::post('/registerController', 'web/Controllers/user/userRegisterController.php');
@@ -27,3 +28,6 @@
    Router::post('/sightRegister', 'web/Controllers/sights/sightsRegisterController.php');
    Router::post('/sightUpdate', 'web/Controllers/sights/sightsUpdateController.php');
    Router::post('/sightDelete', 'web/Controllers/sights/sightsDeleteController.php');
+   Router::post('/restaurantRegister', 'web/Controllers/restaurants/restaurantRegisterController.php');
+   Router::post('/restaurantUpdate', 'web/Controllers/restaurants/restaurantUpdateController.php');
+   Router::post('/restaurantDelete', 'web/Controllers/restaurants/restaurantDeleteController.php');

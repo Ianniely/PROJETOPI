@@ -43,6 +43,19 @@ class CityModel {
         return $stmt->fetch();
     }
 
+     /**
+     * Receives a name and searches for it in the city table, if it finds the name returns all the data from the corresponding column otherwise returns false.
+     */
+    public function findId(string $cityid) : Array | bool
+    {
+        $query = "SELECT cid_nome FROM tb_cidade WHERE cid_id=:cityid";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bindValue(":cityid", $cityid);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+
     /**
      *Returns all the cities that are in the database
      */
