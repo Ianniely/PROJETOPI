@@ -64,8 +64,8 @@ if($resultQuery) {
     if($resultQuery['res_descricao'] != $newDrescripitionRestaurant) {
         $data =  $restaurantModel->updateDrescripition($newDrescripitionRestaurant, $idRestaurant, $resultQuery['res_nome']);
     }
-    if($resultQuery['res_cid_codigo'] != $resultCity['cid_id']) {
-        $data =  $restaurantModel->updateCity($resultCity['cid_id'], $idRestaurant, $resultQuery['res_nome']);
+    if($resultQuery['res_cid_codigo'] != $resultCity['cid_codigo']) {
+        $data =  $restaurantModel->updateCity($resultCity['cid_codigo'], $idRestaurant, $resultQuery['res_nome']);
     }
 }
 header('Location: /homeRestaurantSuper');

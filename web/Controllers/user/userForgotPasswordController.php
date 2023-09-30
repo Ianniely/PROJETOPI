@@ -56,7 +56,7 @@
                 // Enviar o e-mail
                 $mail->send();
                 $result = true;
-                $user->updatePassword(password_hash($password, PASSWORD_ARGON2I), $data['usu_id'], $data['usu_email']);
+                $user->updatePassword(password_hash($password, PASSWORD_ARGON2I), $data['cli_codigo'], $data['cli_email']);
                 require 'web/Views/forgotPassword.php';
             } catch (Exception $e) {
                 echo 'Houve um erro ao enviar o e-mail: ' . $mail->ErrorInfo;
@@ -64,9 +64,9 @@
 
         } else {
             $send = true;
-            require 'web/Views/forgotPassword.php';
+            require 'web/Views/auth/forgotPassword.php';
         }
 
      } else {
-        require 'web/Views/forgotPassword.php';
+        require 'web/Views/auth/forgotPassword.php';
      }

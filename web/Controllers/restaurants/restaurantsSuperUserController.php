@@ -4,7 +4,7 @@ use web\Models\CityModel;
 use web\Models\RestaurantModel;
 
 if(auth\hasUse()) {
-    $userName = $_SESSION['userData']['usu_nome'];
+    $userName = $_SESSION['userData']['cli_nome'];
     $userName = explode(' ', $userName);
     $userName = $userName[0];
 
@@ -23,7 +23,7 @@ if(auth\hasUse()) {
         $i += 1;        
     }
     
-    require 'web/Views/restaurantsSuperUser.php';
+    require 'web/Views/restaurant/restaurantsSuperUser.php';
 } else {
     require 'web/Views/home.php';
 }

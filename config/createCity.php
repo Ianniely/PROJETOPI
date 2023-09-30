@@ -1,6 +1,7 @@
 <?php
     use sql\Connection;
     use web\Models\CityModel;
+    $con = Connection::getInstance();
 
     $citys = [
         'Natal' => [
@@ -141,15 +142,19 @@
         ],
     ];
 
-    $cityModel = new CityModel(Connection::getInstance());
+    $query = "SELECT COUNT(*)  FROM tb_cidades";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch();
 
-    foreach ($citys as $cityName => $cityInfo) {
-        $result = $cityModel->find($cityName);
+    if($result[0] == 0) {
+        $cityModel = new CityModel($con);
 
-        if ($result) {
-            echo "A cidade '$cityName' já existe.<br>";
-        } else {
-            $cityModel->save($cityName, $cityInfo['population'], $cityInfo['weather'], $cityInfo['descrepition']);
-            echo "A cidade '$cityName' foi cadastrada.<br>";
+        foreach ($citys as $cityName => $cityInfo) {
+            $result = $cityModel->find($cityName);
+
+            if (!$result) {
+                $cityModel->save($cityName, $cityInfo['population'], $cityInfo['weather'], $cityInfo['descrepition']);
+            }
         }
     }

@@ -4,15 +4,13 @@
     use sql\Connection;
     use web\Models\UserModel;
 
-    $user = new UserModel(Connection::getInstance());
+    // Variable created there in the file 'createCity.php' and attached to it a database connection object;
+    $con; 
+
+    $user = new UserModel($con);
 
     $existsSuperUser = $user->findSuperUser();
 
     if(!$existsSuperUser) {
-
-        $ResultQueryExecution = $userModel->save('nome', 'cidade', 'estado', 'telefone', 'super', 'superuser@gmail.com', 'superuser#123$');
-
-        header('Location: /');
-    } else {
-        header('Location: /');
+        $ResultQueryExecution = $user->save('nome', 'cidade', 'estado', 'telefone', 'super', 'superuser@gmail.com', 'superuser#123$');
     }

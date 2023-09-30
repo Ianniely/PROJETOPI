@@ -14,7 +14,7 @@ if($resultQuery) {
     $newPopulationCity = $_POST['populationCity'];
     $newWeatherCity = $_POST['weatherCity'];
     $newDrescripitionCity = $_POST['drescripitionCity'];
-    $idCity = $resultQuery['cid_id'];
+    $idCity = $resultQuery['cid_codigo'];
 
     if($resultQuery['cid_nome'] != $newNameCity) {
         $resultQuery =  $cityModel->updateName($newNameCity, $idCity, $newNameCity);

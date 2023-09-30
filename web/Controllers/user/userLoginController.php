@@ -12,7 +12,7 @@
         $user = new UserModel(Connection::getInstance());
         $data = $user->find($email); 
 
-        if ($data && password_verify($password, $data["usu_senha"])) {
+        if ($data && password_verify($password, $data["cli_senha"])) {
             $_SESSION['loggedUser'] = true;
             $_SESSION['userData'] = $data;
 
@@ -21,7 +21,7 @@
 
             $incorrectLogin = true;
 
-            require "web/Views/login.php";
+            require "web/Views/auth/login.php";
         }
     } else {
 
@@ -29,5 +29,5 @@
 
         $emptyLogin = true;
 
-        require "web/Views/login.php";
+        require "web/Views/auth/login.php";
     }

@@ -6,8 +6,8 @@
     if(auth\hasUse()) {
 
         $user = new UserModel(Connection::getInstance());
-        $id = $_SESSION['userData']['usu_id'];
-        $email = $_SESSION['userData']['usu_email'];
+        $id = $_SESSION['userData']['cli_codigo'];
+        $email = $_SESSION['userData']['cli_email'];
 
         if(!empty($_POST['name'])) {
 
@@ -48,7 +48,7 @@
 
             $userPassword = $_POST['password'];
 
-            if(password_verify($userPassword, $_SESSION['userData']['usu_senha'])) {
+            if(password_verify($userPassword, $_SESSION['userData']['cli_senha'])) {
 
                 $newUserPassWord = password_hash($_POST['newPassword'], PASSWORD_ARGON2I);
                 $data = $user->updatePassword($newUserPassWord, $id, $email);

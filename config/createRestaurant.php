@@ -1,6 +1,9 @@
 <?php
-use sql\Connection;
-use web\Models\RestaurantModel;
+    use sql\Connection;
+    use web\Models\RestaurantModel;
+
+    // Variable created there in the file 'createCity.php' and attached to it a database connection object;
+    $con; 
 
     $restaurants = [
         'Sabor Nordestino' => [
@@ -35,7 +38,7 @@ use web\Models\RestaurantModel;
             - Aberto para almoço e jantar, das 11:30 às 22:00, proporcionando aos visitantes a oportunidade de saborear a autêntica culinária nordestina em qualquer momento do dia.
             
             O Sabor Nordestino é uma verdadeira homenagem à rica tradição culinária do Nordeste do Brasil e uma parada obrigatória para os amantes da gastronomia regional.',
-            'city' => 18,
+            'city' => 1,
         ],
         'Casa do Sabor Potiguar' => [
             'name' => 'Casa do Sabor Potiguar',
@@ -69,7 +72,7 @@ use web\Models\RestaurantModel;
             - Aberto para almoço e jantar, das 12:00 às 21:00, permitindo que os visitantes desfrutem das delícias da culinária potiguar em diversos horários.
             
             Venha descobrir os sabores autênticos do Rio Grande do Norte na Casa do Sabor Potiguar, onde a tradição culinária local é celebrada.',
-            'city' => 23,
+            'city' => 6,
             ],
             'Mangai Natal' => [
                 'name' => 'Mangai Natal',
@@ -103,7 +106,7 @@ use web\Models\RestaurantModel;
             - Aberto para almoço e jantar, das 11:00 às 21:30, para que você possa saborear as delícias nordestinas em horários convenientes.
             
             Venha desfrutar da autêntica comida nordestina no Mangai Natal, onde a tradição e o sabor se encontram em cada prato.',
-                'city' => 18,
+                'city' => 1,
             ],
             'Camarões Potiguar' => [
                 'name' => 'Camarões Potiguar',
@@ -137,7 +140,7 @@ use web\Models\RestaurantModel;
                 - Aberto para almoço e jantar, das 11:30 às 22:00, para que você possa saborear pratos de frutos do mar frescos a qualquer hora do dia.
                 
                 Desfrute de uma experiência culinária única no Camarões Potiguar, onde a qualidade e o sabor se destacam em cada prato.',
-                'city' => 19,
+                'city' => 8,
             ],
             'Tábua de Carne' => [
                 'name' => 'Tábua de Carne',
@@ -171,19 +174,23 @@ use web\Models\RestaurantModel;
                 - Aberto para o almoço e jantar, das 12:00 às 23:00, permitindo que você desfrute de uma deliciosa refeição a qualquer momento.
                 
                 Venha experimentar a autêntica churrascaria da Tábua de Carne e saboreie os melhores cortes de carne grelhada em Natal!',
-                'city' => 18,
+                'city' => 7,
             ],
     ];
 
-    $restaurantsModel = new RestaurantModel(Connection::getInstance());
+    $query = "SELECT COUNT(*)  FROM tb_restaurantes";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch();
 
-    foreach ($restaurants as $restauranteName => $restaurantInfo) {
-        $result = $restaurantsModel->find($restauranteName);
+    if($result[0] == 0) {
+        $restaurantsModel = new RestaurantModel($con);
 
-        if ($result) {
-            echo "O Restaurante '$restauranteName' já existe.<br>";
-        } else {
-            $restaurantsModel->save($restauranteName, $restaurantInfo['neighborhood'], $restaurantInfo['street'], $restaurantInfo['street number'], $restaurantInfo['opening hours'], $restaurantInfo['closing hours'], $restaurantInfo['average cost'], $restaurantInfo['classification'], $restaurantInfo['type of cuisine'], $restaurantInfo['accessibility'], $restaurantInfo['description'], $restaurantInfo['city']);
-            echo "O Restaurante '$restauranteName' foi cadastrado.<br>";
+        foreach ($restaurants as $restauranteName => $restaurantInfo) {
+            $result = $restaurantsModel->find($restauranteName);
+
+            if (!$result) {
+                $restaurantsModel->save($restauranteName, $restaurantInfo['neighborhood'], $restaurantInfo['street'], $restaurantInfo['street number'], $restaurantInfo['opening hours'], $restaurantInfo['closing hours'], $restaurantInfo['average cost'], $restaurantInfo['classification'], $restaurantInfo['type of cuisine'], $restaurantInfo['accessibility'], $restaurantInfo['description'], $restaurantInfo['city']);
+            }
         }
     }

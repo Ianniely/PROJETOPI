@@ -47,28 +47,28 @@
                 <div class="bg-gray-200 border rounded-md shadow-md p-2 my-4 flex justify-between">
                     <div>
                         <h3 class="font-semibold">Nome</h3>
-                        <?php echo "<p>$userData[usu_nome]</p>"?>
+                        <?php echo "<p>$userData[cli_nome]</p>"?>
                     </div>
                     <button><span class="p-2 mt-1"><ion-icon name="pencil-outline"></ion-icon></span></button>
                 </div>
                 <div class="bg-gray-200 border rounded-md shadow-md p-2 my-4 flex justify-between">
                     <div>
                         <h3 class="font-semibold">Telefone</h3>
-                        <?php echo "<p>$userData[usu_telefone]</p>"?>
+                        <?php echo "<p>$userData[cli_telefone]</p>"?>
                     </div>
                     <button><span class="p-2 mt-1"><ion-icon name="pencil-outline"></ion-icon></span></button>
                 </div>
                 <div class="bg-gray-200 border rounded-md shadow-md p-2  my-4 flex justify-between">
                     <div>
                         <h3 class="font-semibold">Cidade</h3>
-                        <?php echo "<p>$userData[usu_cidade]</p>"?>
+                        <?php echo "<p>$userData[cli_cidade]</p>"?>
                     </div>
                     <button><span class="p-2 mt-1"><ion-icon name="pencil-outline"></ion-icon></span></button>
                 </div> 
                 <div class="bg-gray-200 border rounded-md shadow-md p-2  my-4 flex justify-between"> 
                     <div>
                         <h3 class="font-semibold">Estado</h3>
-                        <?php echo "<p>$userData[usu_estado]</p>"?>
+                        <?php echo "<p>$userData[cli_estado]</p>"?>
                     </div>  
                     <button><span class="p-2 mt-1"><ion-icon name="pencil-outline"></ion-icon></span></button>
                 </div>
@@ -82,7 +82,7 @@
                 <div class="bg-gray-200 border rounded-md shadow-md p-2 my-4 flex justify-between">
                     <div>
                         <h3 class="font-semibold">Email</h3>
-                        <?php echo "<p>$userData[usu_email]</p>"?>
+                        <?php echo "<p>$userData[cli_email]</p>"?>
                     </div>
                     <button><span class="p-2 mt-1"><ion-icon name="pencil-outline"></ion-icon></span></button>
                 </div>
@@ -114,10 +114,11 @@
                     <a class="hover:underline" href="/pages">Privacidade</a> 
                     
                     <?php 
-                        if($_SESSION['userData']['usu_tipo'] == 'super') {
+                        if($_SESSION['userData']['cli_tipo'] == 'super') {
                             echo "<a class='hover:underline' href='/homeSuper'>Configurações de Cidades</a>";
                             echo "<a class='hover:underline' href='/homeSeghtsSuper'>Configurações de Pontos Turísticos</a>";
                             echo "<a class='hover:underline' href='/homeRestaurantSuper'>Configurações de Restaurantes</a>";
+                            echo "<a class='hover:underline' href='/homeAccommodationSuper'>Configurações de Hospedagens</a>";
                         }
                     ?>
 
@@ -133,13 +134,13 @@
                     <p>Atualize seus dados para ajuda-nos a melhorar suas esperiência</p>
                     <form action="/updateUser" method="POST" class="flex flex-col space-y-1 mt-2">
                         <label for="name" class="pl-1 ">Nome</label>
-                        <input type="text" name="name" id="name" placeholder="<?php echo $userData['usu_nome']; ?>" class="border rounded-md p-2">
+                        <input type="text" name="name" id="name" placeholder="<?php echo $userData['cli_nome']; ?>" class="border rounded-md p-2">
                         <label for="city" class="pl-1 pt-2">Cidade</label>
-                        <input type="text" name="city" id="city" placeholder="<?php echo $userData['usu_cidade']; ?>" class="border rounded-md p-2">
+                        <input type="text" name="city" id="city" placeholder="<?php echo $userData['cli_cidade']; ?>" class="border rounded-md p-2">
                         <label for="state" class="pl-1 pt-2">Estado</label>
-                        <input type="text" name="state" id="state" placeholder="<?php echo $userData['usu_estado']; ?>" class="border rounded-md p-2">
+                        <input type="text" name="state" id="state" placeholder="<?php echo $userData['cli_estado']; ?>" class="border rounded-md p-2">
                         <label for="phoneNumber" class="pl-1 pt-2">Telefone</label>
-                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="<?php echo $userData['usu_telefone']; ?>" class="border rounded-md p-2">
+                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="<?php echo $userData['cli_telefone']; ?>" class="border rounded-md p-2">
                         <div class="py-2">
                             <button type="submit" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-blue-600 text-gray-50">Salvar Alterações</button>
                             <a href="" type="button" onclick="showDiv(cardEditeData)" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-gray-200 text-red-500">Cancelar</a>
@@ -155,7 +156,7 @@
                     <p>Atualize seus dados para ajuda-nos a melhorar suas esperiência</p>
                     <form action="/updateUser" method="POST" class="flex flex-col space-y-1 mt-2">
                         <label for="name" class="pl-1 ">Email</label>
-                        <input type="text" name="email" id="email" placeholder="<?php echo $userData['usu_email']; ?>" class="border rounded-md p-2">
+                        <input type="text" name="email" id="email" placeholder="<?php echo $userData['cli_email']; ?>" class="border rounded-md p-2">
                         <div class="py-2">
                             <button type="submit" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-blue-600 text-gray-50">Salvar Alterações</button>
                             <a  href="" onclick="showDiv(cardEditeEmail)" class="p-2 border rounded-md border-transparent hover:scale-105 transform ease-in-out bg-gray-200 text-red-500">Cancelar</a>
