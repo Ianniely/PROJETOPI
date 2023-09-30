@@ -11,7 +11,7 @@
         $data = $city->find($name);
 
         if($data) {
-            $idCity = $data['cid_id'];
+            $idCity = $data['cid_codigo'];
             $city->delete($idCity);
 
             header('Location: /homeSuper');

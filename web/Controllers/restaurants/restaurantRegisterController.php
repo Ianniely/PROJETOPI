@@ -30,11 +30,11 @@
             header('Location: /homeRestaurantSuper');
         } else{
             if($dataCity != false) {
-                $id = $dataCity['cid_id']; 
+                $id = $dataCity['cid_codigo']; 
                 $restaurant->save($name, $neighborhood, $street, $streetNumber, $openingHours, $closingHours, $averageCost, $classification, $typeCuisine, $accessibility, $drescripition, $id);
                 $result = true;  
-                header('Location: /homeRestaurantSuper');
             }   
+            header('Location: /homeRestaurantSuper');
         }
     } else {
         $emptyData = true;

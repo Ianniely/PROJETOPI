@@ -21,7 +21,7 @@ class CityModel {
      */
     public function save(string $cityName, string $cityPopulation, string $cityWeather, string $cityDescription) : bool 
     {
-        $query = "INSERT INTO tb_cidade(cid_nome, cid_descricao, cid_populacao, cid_clima)"  . "values(:cityName,:cityDescription,:cityPopulation,:cityWeather)";
+        $query = "INSERT INTO tb_cidades(cid_nome, cid_descricao, cid_populacao, cid_clima)"  . "values(:cityName,:cityDescription,:cityPopulation,:cityWeather)";
         $stmt = $this->connection->prepare($query);
         $stmt->bindValue(":cityName", $cityName);
         $stmt->bindValue(":cityDescription", $cityDescription);
@@ -36,7 +36,7 @@ class CityModel {
      */
     public function find(string $cityName) : Array | bool
     {
-        $query = "SELECT * FROM tb_cidade WHERE cid_nome=:cityName";
+        $query = "SELECT * FROM tb_cidades WHERE cid_nome=:cityName";
         $stmt = $this->connection->prepare($query);
         $stmt->bindValue(":cityName", $cityName);
         $stmt->execute();
@@ -46,9 +46,9 @@ class CityModel {
      /**
      * Receives a name and searches for it in the city table, if it finds the name returns all the data from the corresponding column otherwise returns false.
      */
-    public function findId(string $cityid) : Array | bool
+    public function findId($cityid) : Array | bool
     {
-        $query = "SELECT cid_nome FROM tb_cidade WHERE cid_id=:cityid";
+        $query = "SELECT cid_nome FROM tb_cidades WHERE cid_codigo=:cityid";
         $stmt = $this->connection->prepare($query);
         $stmt->bindValue(":cityid", $cityid);
         $stmt->execute();
@@ -61,7 +61,7 @@ class CityModel {
      */
     public function AllCities() : array
     {
-        $query = "SELECT * FROM tb_cidade ORDER BY cid_nome";
+        $query = "SELECT * FROM tb_cidades ORDER BY cid_nome";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -89,7 +89,7 @@ class CityModel {
      */
     public function updateName(string $cityName, int $id, string $name) : Array | bool
     {
-        $query = "UPDATE tb_cidade SET cid_nome=:valuee WHERE cid_id=:id";
+        $query = "UPDATE tb_cidades SET cid_nome=:valuee WHERE cid_codigo=:id";
         return $this->update($query, $cityName, $id, $name);
     }
 
@@ -98,7 +98,7 @@ class CityModel {
      */
     public function updateDescription(string $cityDescription, int $id, string $name) : Array | bool
     {
-        $query = "UPDATE tb_cidade SET cid_descricao=:valuee WHERE cid_id=:id";
+        $query = "UPDATE tb_cidades SET cid_descricao=:valuee WHERE cid_codigo=:id";
         return $this->update($query, $cityDescription, $id, $name);
     }
 
@@ -107,7 +107,7 @@ class CityModel {
      */
     public function updatePopulation(string $cityPopulation, int $id, string $name) : Array | bool
     {
-        $query = "UPDATE tb_cidade SET cid_populacao=:valuee WHERE cid_id=:id";
+        $query = "UPDATE tb_cidades SET cid_populacao=:valuee WHERE cid_codigo=:id";
         return $this->update($query, $cityPopulation, $id, $name);
     }
 
@@ -116,7 +116,7 @@ class CityModel {
      */
     public function updateWeather(string $cityWeather, int $id, string $name) : Array | bool
     {
-        $query = "UPDATE tb_cidade SET cid_clima=:valuee WHERE cid_id=:id";
+        $query = "UPDATE tb_cidades SET cid_clima=:valuee WHERE cid_codigo=:id";
         return $this->update($query, $cityWeather, $id, $name);
     }
 
@@ -125,7 +125,7 @@ class CityModel {
      */
     public function delete(string $cityId) : bool
     {
-        $query = "DELETE FROM tb_cidade WHERE cid_id=:cityId";   
+        $query = "DELETE FROM tb_cidades WHERE cid_codigo=:cityId";   
         $stmt = $this->connection->prepare($query);
         $stmt->bindValue(":cityId", $cityId);
         $result = $stmt->execute();

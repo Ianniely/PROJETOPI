@@ -3,7 +3,7 @@ use sql\Connection;
 use web\Models\SightsModel;
 
 if(auth\hasUse()) {
-    $userName = $_SESSION['userData']['usu_nome'];
+    $userName = $_SESSION['userData']['cli_nome'];
     $userName = explode(' ', $userName);
     $userName = $userName[0];
 
@@ -11,7 +11,7 @@ if(auth\hasUse()) {
     $SightsModel = new SightsModel($conn);
     $sights = $SightsModel->AllSights();
     
-    require 'web/Views/sightsSuperUser.php';
+    require 'web/Views/sight/sightsSuperUser.php';
 } else {
     require 'web/Views/home.php';
 }

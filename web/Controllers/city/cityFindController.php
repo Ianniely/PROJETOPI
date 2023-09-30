@@ -4,7 +4,7 @@ use sql\Connection;
 use web\Models\CityModel;
 
 if(auth\hasUse()) {
-    $userName = $_SESSION['userData']['usu_nome'];
+    $userName = $_SESSION['userData']['cli_nome'];
     $userName = explode(' ', $userName);
     $userName = $userName[0];
 }
@@ -17,7 +17,7 @@ if(auth\hasUse()) {
         $resultQuery = $cityModel->find($cityName);
 
         if($resultQuery) {
-            require_once 'web/Views/city.php';
+            require_once 'web/Views/city/city.php';
         } else {
             header('Location: /citys');
         }

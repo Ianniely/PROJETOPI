@@ -11,7 +11,7 @@
         $data = $Sights->find($name); 
 
         if ($data) {
-            $Sights->delete($data["pon_id"]);
+            $Sights->delete($data["pot_codigo"]);
         }
 
         header('Location: /homeSeghtsSuper');

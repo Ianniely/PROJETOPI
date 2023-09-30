@@ -13,7 +13,7 @@ class RestaurantModel {
     }
 
     public function save(string $restaurantName, string $restaurantNeighborhood, string $restaurantRoad, int $restaurantNumber, string $horarioAbertura, string $horarioFechamento, string $valor, string $restaurantClassification, string $tipoCulinaria, string $restaurantAcessibilidade, string $restaurantDescricao, string $cityId ) : bool {
-        $query = "INSERT INTO tb_restaurantess(res_nome, res_bairro, res_rua, res_numero, res_horario_abertura, res_horario_fechamento, res_valor_medio, res_classificacao, res_tipo_culinaria, res_acessibilidade, res_descricao, res_cid_codigo)"  . "values(:restaurantName, :restaurantNeighborhood, :restaurantRoad, :restaurantNumber, :resHorarioAbertura, :resHorarioFechamento, :resValor, :resClassificacao, :resTipoCulinaria, :resAcessibilidade, :resDescricao, :cityId)";
+        $query = "INSERT INTO tb_restaurantes(res_nome, res_bairro, res_rua, res_numero, res_horario_abertura, res_horario_fechamento, res_valor_medio, res_classificacao, res_tipo_culinaria, res_acessibilidade, res_descricao, res_cid_codigo)"  . "values(:restaurantName, :restaurantNeighborhood, :restaurantRoad, :restaurantNumber, :resHorarioAbertura, :resHorarioFechamento, :resValor, :resClassificacao, :resTipoCulinaria, :resAcessibilidade, :resDescricao, :cityId)";
         $stmt = $this->connection->prepare($query);
         $stmt->bindValue(":restaurantName", $restaurantName);
         $stmt->bindValue(":restaurantNeighborhood", $restaurantNeighborhood);

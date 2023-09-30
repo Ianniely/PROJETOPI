@@ -20,9 +20,9 @@ class SightsModel
         /**
          * Receives data sent by a registration form and saves it in the user table of the database, returning true or false whether the query was successful or not.
          */
-        public function save(string $pontoNome, string $pontoDescricao, string $pontoClassificacao, string $pontoAcessibilidade, string $pontoBairro, string $pontoRua, string $city, int $cityId) : bool 
+        public function save(string $pontoNome, string $pontoDescricao, string $pontoClassificacao, string $pontoAcessibilidade, string $pontoBairro, string $pontoRua, $cityId) : bool 
         {
-            $query = "INSERT INTO tb_pontos_turisticos(pon_nome, pon_descricao, pon_classificacao, pon_acessibilidade, pon_bairro, pon_rua, pon_cidade, pon_id_cid)"  . "values(:pontoNome,:pontoDescricao,:pontoClassificacao,:pontoAcessibilidade,:pontoBairro,:pontoRua,:city,:cityId)";
+            $query = "INSERT INTO tb_pontos_turisticos(pot_nome, pot_descricao, pot_classificacao, pot_acessibilidade, pot_bairro, pot_rua, pot_cid_codigo)"  . "values(:pontoNome,:pontoDescricao,:pontoClassificacao,:pontoAcessibilidade,:pontoBairro,:pontoRua,:cityId)";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":pontoNome", $pontoNome);
             $stmt->bindValue(":pontoDescricao", $pontoDescricao);
@@ -30,7 +30,6 @@ class SightsModel
             $stmt->bindValue(":pontoAcessibilidade", $pontoAcessibilidade);
             $stmt->bindValue(":pontoBairro", $pontoBairro);
             $stmt->bindValue(":pontoRua", $pontoRua);
-            $stmt->bindValue(":city", $city);
             $stmt->bindValue(":cityId", $cityId);
             $result = $stmt->execute();
             return $result;
@@ -41,7 +40,7 @@ class SightsModel
          */
         public function find(string $nomePonto) : Array | bool
         {
-            $query = "SELECT * FROM tb_pontos_turisticos WHERE pon_nome=:nomePonto";
+            $query = "SELECT * FROM tb_pontos_turisticos WHERE pot_nome=:nomePonto";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":nomePonto", $nomePonto);
             $stmt->execute();
@@ -53,7 +52,7 @@ class SightsModel
         */
         public function AllSights() : array
         {
-            $query = "SELECT * FROM tb_pontos_turisticos ORDER BY pon_nome";
+            $query = "SELECT * FROM tb_pontos_turisticos ORDER BY pot_nome";
             $stmt = $this->connection->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll();
@@ -81,7 +80,7 @@ class SightsModel
          */
         public function updateName(string $pontoNome, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_nome=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_nome=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoNome, $id, $nome);
         }
 
@@ -90,7 +89,7 @@ class SightsModel
          */
         public function updateNeighborhood(string $pontoBairro, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_bairro=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_bairro=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoBairro, $id, $nome);
         }
 
@@ -99,7 +98,7 @@ class SightsModel
          */
         public function updateStret(string $pontoRua, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_rua=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_rua=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoRua, $id, $nome);
         }
 
@@ -108,7 +107,7 @@ class SightsModel
          */
         public function updateCity(string $pontoCidade, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_cidade=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_cid_codigo=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoCidade, $id, $nome);
         }
 
@@ -117,7 +116,7 @@ class SightsModel
          */
         public function updateDrescripition(string $pontoDescricao, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_descricao=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_descricao=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoDescricao, $id, $nome);
         }
 
@@ -126,7 +125,7 @@ class SightsModel
          */
         public function updateClassification(string $pontoClassificacao, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_classificacao=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_classificacao=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoClassificacao, $id, $nome);
         }
 
@@ -135,7 +134,7 @@ class SightsModel
          */
         public function updateAccessibility(string $pontoAcessibilidade, int $id, string $nome) : Array | bool
         {
-            $query = "UPDATE tb_pontos_turisticos SET pon_acessibilidade=:valuee WHERE pon_id=:id";
+            $query = "UPDATE tb_pontos_turisticos SET pot_acessibilidade=:valuee WHERE pot_codigo=:id";
             return $this->update($query, $pontoAcessibilidade, $id, $nome);
         }
 
@@ -146,7 +145,7 @@ class SightsModel
          */
         public function delete(int $idPonto) : bool
         {
-            $query = "DELETE FROM tb_pontos_turisticos WHERE pon_id=:idPonto";   
+            $query = "DELETE FROM tb_pontos_turisticos WHERE pot_codigo=:idPonto";   
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":idPonto", $idPonto);
             $result = $stmt->execute();

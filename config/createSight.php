@@ -1,7 +1,10 @@
 <?php
-use sql\Connection;
-use web\Models\CityModel;
-use web\Models\SightsModel;
+    use sql\Connection;
+    use web\Models\CityModel;
+    use web\Models\SightsModel;
+
+    // Variable created there in the file 'createCity.php' and attached to it a database connection object;
+    $con; 
 
     $sights = [
         'Morro do Careca' => [
@@ -31,8 +34,7 @@ use web\Models\SightsModel;
             Esta atração é verdadeiramente imperdível para quem visita Natal. Uma combinação de beleza natural e experiências emocionantes aguarda todos os que exploram o Morro do Careca.',
             'classification' => '5 estrelhas', 
             'accessibility' => 'Disponível',
-            'city' => 'Natal',
-            'id' => '18',
+            'id' => '1',
         ],
         'Praia das Tartarugas' => [
             'name' => 'Praia das Tartarugas',
@@ -61,8 +63,7 @@ use web\Models\SightsModel;
             ',
             'classification' => '4 estrelas',
             'accessibility' => 'Disponível',
-            'city' => 'Natal',
-            'id' => '18',
+            'id' => '1',
         ],
         'Cachoeira da Serra' => [
             'name' => 'Cachoeira da Serra',
@@ -91,8 +92,7 @@ use web\Models\SightsModel;
             ',
             'classification' => '5 estrelas',
             'accessibility' => 'Indisponível',
-            'city' => 'Caicó',
-            'id' => '18',
+            'id' => '8',
         ],
         'Praia de Genipabu' => [
         'name' => 'Praia de Genipabu',
@@ -123,8 +123,7 @@ use web\Models\SightsModel;
         ',
         'classification' => '4 estrelas',
         'accessibility' => 'Disponível',
-        'city' => 'Natal',
-        'id' => '18',
+        'id' => '1',
     ],
     'Parrachos de Maracajaú' => [
         'name' => 'Parrachos de Maracajaú',
@@ -155,21 +154,24 @@ use web\Models\SightsModel;
         ',
         'classification' => '5 estrelhas',
         'accessibility' => 'Disponível',
-        'city' => 'Natal',
-        'id' => '18',
+        'id' => '1',
     ],
 ];
 
-    $Sights = new SightsModel(Connection::getInstance());
-    $city = new CityModel(Connection::getInstance());
+    $query = "SELECT COUNT(*)  FROM tb_pontos_turisticos";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch();
 
-    foreach ($sights as $sightName => $sightInfo) {
-        $result = $Sights->find($sightName);
+    if($result[0] == 0) {
+        $Sights = new SightsModel($con);
+        $city = new CityModel($con);
 
-        if ($result) {
-            echo "O Ponto '$sightName' já existe.<br>";
-        } else {
-            $Sights->save($sightName, $sightInfo['description'], $sightInfo['classification'], $sightInfo['accessibility'], $sightInfo['neighborhood'], $sightInfo['street'], $sightInfo['city'], $sightInfo['id']);
-            echo "O Ponto '$sightName' foi cadastrado.<br>";
+        foreach ($sights as $sightName => $sightInfo) {
+            $result = $Sights->find($sightName);
+
+            if (!$result) {
+                $Sights->save($sightName, $sightInfo['description'], $sightInfo['classification'], $sightInfo['accessibility'], $sightInfo['neighborhood'], $sightInfo['street'], $sightInfo['id']);
+            }
         }
     }

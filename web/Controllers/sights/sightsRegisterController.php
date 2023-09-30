@@ -24,55 +24,11 @@
             header('Location: /homeSeghtsSuper');
         } else {
             
-            $id = $dataCity['cid_id'];
-            $ResultQueryExecution = $SightsModel->save($name, $drescripition, $classification, $accessibility, $neighborhood, $stret, $city, $id);
+            $id = $dataCity['cid_codigo'];
+            $ResultQueryExecution = $SightsModel->save($name, $drescripition, $classification, $accessibility, $neighborhood, $stret, $id);
 
             header('Location: /homeSeghtsSuper');
         }
     } else {
         header('Location: /homeSeghtsSuper');
     }
-/**
-        //All the data of the registration form were received, with content
-
-        $nome = $_POST['nome'];
-        $bairro = $_POST['bairro'];
-        $rua = $_POST['rua'];
-        $descricao = $_POST['descriicao'];
-        $classificacao = $_POST['classificacao'];
-        $acessibilidade = $_POST['acessibilidade'];
-
-        list($pontonome, $domain) = explode('', $nome);
-
-        if (filter_var($nome, FILTER_VALIDATE_NAME) && checkdnsrr($domain, 'MX')) {
-            $conn = Connection::getInstance();
-            $PontoTuristicoModel = new PontoTuristicoModel($conn);
-    
-            $data = $PontoTuristicoModel->find($nome);
-            
-            if($data) {
-                header('Location: /PontoTuristico');
-            } else {
-                
-                $ResultQueryExecution = $PontoTuristicoModel->save($nome, $bairro, $rua, $descricao, $classificacao, $acessibilidade);
-                
-                //The data was saved executed successfully
-                $_SESSION['loggedPonto'] = true;
-    
-                $data = $PontoTuristicoModel->find($nome);
-                $_SESSION['PontoData'] = $data;
-    
-                header('Location: /');
-            }
-        } else {
-            $incorrectRegister = true;
-
-            require "web/Views/Ponto.php";
-        }
-       
-    } else {
-        $emptyRegister = true;
-
-        require "web/Views/Ponto.php";
-    }
-    */

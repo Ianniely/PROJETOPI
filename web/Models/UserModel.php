@@ -22,7 +22,7 @@ class UserModel
          */
         public function save(string $userName, string $userCity, string $userState, string $userPhoneNumber, string $userType, string $userEmail, string $userPassword) : bool 
         {
-            $query = "INSERT INTO tb_usuario(usu_nome, usu_cidade, usu_estado, usu_telefone, usu_tipo, usu_email, usu_senha)"  . "values(:userName,:userCity,:userState,:userPhoneNumber,:userType,:userEmail,:userPassword)";
+            $query = "INSERT INTO tb_clientes(cli_nome, cli_cidade, cli_estado, cli_telefone, cli_tipo, cli_email, cli_senha)"  . "values(:userName,:userCity,:userState,:userPhoneNumber,:userType,:userEmail,:userPassword)";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":userName", $userName);
             $stmt->bindValue(":userCity", $userCity);
@@ -40,7 +40,7 @@ class UserModel
          */
         public function find(string $emailUser) : Array | bool
         {
-            $query = "SELECT * FROM tb_usuario WHERE usu_email=:emailUser";
+            $query = "SELECT * FROM tb_clientes WHERE cli_email=:emailUser";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":emailUser", $emailUser);
             $stmt->execute();
@@ -49,7 +49,7 @@ class UserModel
 
         public function findSuperUser()
         {
-            $query = "SELECT * FROM tb_usuario WHERE usu_tipo=:tipo";
+            $query = "SELECT * FROM tb_clientes WHERE cli_tipo=:tipo";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":tipo", 'super');
             $result =  $stmt->execute();
@@ -59,7 +59,7 @@ class UserModel
         /**
         public function update(string $nameCol, string $value, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET $nameCol=:value WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET $nameCol=:value WHERE cli_codigo=:id";
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":value", $value);
             $stmt->bindValue(":id", $id);
@@ -95,7 +95,7 @@ class UserModel
          */
         public function updateName(string $userName, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_nome=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_nome=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userName, $id, $email);
         }
 
@@ -104,7 +104,7 @@ class UserModel
          */
         public function updateCity(string $userCity, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_cidade=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_cidade=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userCity, $id, $email);
         }
 
@@ -113,7 +113,7 @@ class UserModel
          */
         public function updateState(string $userState, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_estado=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_estado=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userState, $id, $email);
         }
 
@@ -122,7 +122,7 @@ class UserModel
          */
         public function updatePhoneNumber(string $userPhoneNumber, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_telefone=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_telefone=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userPhoneNumber, $id, $email);
         }
 
@@ -131,7 +131,7 @@ class UserModel
          */
         public function updateType(string $userType, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_tipo=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_tipo=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userType, $id, $email);
         }
 
@@ -140,7 +140,7 @@ class UserModel
          */
         public function updateEmail(string $userEmail, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_email=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_email=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userEmail, $id, $email);
         }
 
@@ -149,7 +149,7 @@ class UserModel
          */
         public function updatePassword(string $userPassword, int $id, string $email) : Array | bool
         {
-            $query = "UPDATE tb_usuario SET usu_senha=:valuee WHERE usu_id=:id";
+            $query = "UPDATE tb_clientes SET cli_senha=:valuee WHERE cli_codigo=:id";
             return $this->update($query, $userPassword, $id, $email);
         }
 
@@ -158,7 +158,7 @@ class UserModel
          */
         public function delete(int $idUser) : bool
         {
-            $query = "DELETE FROM tb_usuario WHERE usu_id=:idUser";   
+            $query = "DELETE FROM tb_clientes WHERE cli_codigo=:idUser";   
             $stmt = $this->connection->prepare($query);
             $stmt->bindValue(":idUser", $idUser);
             $result = $stmt->execute();

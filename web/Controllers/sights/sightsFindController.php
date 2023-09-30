@@ -4,7 +4,7 @@ use sql\Connection;
 use web\Models\SightsModel;
 
 if(auth\hasUse()) {
-    $userName = $_SESSION['userData']['usu_nome'];
+    $userName = $_SESSION['userData']['cli_nome'];
     $userName = explode(' ', $userName);
     $userName = $userName[0];
 }
@@ -17,7 +17,7 @@ if(auth\hasUse()) {
         $resultQuery = $sightModel->find($sightName);
 
         if($resultQuery) {
-            require_once 'web/Views/sight.php';
+            require_once 'web/Views/sight/sight.php';
         } else {
             header('Location: /sights');
         }

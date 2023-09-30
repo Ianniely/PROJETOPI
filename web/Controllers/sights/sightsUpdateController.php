@@ -10,7 +10,7 @@
 
     if($resultQuery) {
 
-        $id = $resultQuery['pon_id'];
+        $id = $resultQuery['pot_codigo'];
         $newNameSight = $_POST['nameSight'];
         $newStretSight = $_POST['stretSight'];
         $newNeighborhoodSight= $_POST['neighborhoodSight'];
@@ -23,29 +23,29 @@
             $data = $sightModel->updateName($newNameSight, $id, $originalSightName);
         }
 
-        if($resultQuery['pon_rua'] != $newStretSight) {
-            $data = $sightModel->updateStret($newStretSight, $id, $resultQuery['pon_nome']);
+        if($resultQuery['pot_rua'] != $newStretSight) {
+            $data = $sightModel->updateStret($newStretSight, $id, $resultQuery['pot_nome']);
         }
 
-        if($resultQuery['pon_bairro'] != $newNeighborhoodSight) {
-            $data = $sightModel->updateNeighborhood($newNeighborhoodSight, $id, $resultQuery['pon_nome']);
+        if($resultQuery['pot_bairro'] != $newNeighborhoodSight) {
+            $data = $sightModel->updateNeighborhood($newNeighborhoodSight, $id, $resultQuery['pot_nome']);
         }
 
         
-        if($resultQuery['pon_cidade'] != $newCitySight) {
-            $data = $sightModel->updateCity($newCitySight, $id, $resultQuery['pon_nome']);
+        if($resultQuery['pot_cid_codigo'] != $newCitySight) {
+            $data = $sightModel->updateCity($newCitySight, $id, $resultQuery['pot_nome']);
         }
 
-        if($resultQuery['pon_acessibilidade'] != $newAccessibilitySight) {
-            $data = $sightModel->updateAccessibility($newAccessibilitySight, $id, $resultQuery['pon_nome']);
+        if($resultQuery['pot_acessibilidade'] != $newAccessibilitySight) {
+            $data = $sightModel->updateAccessibility($newAccessibilitySight, $id, $resultQuery['pot_nome']);
         }
 
-        if($resultQuery['pon_classificacao'] != $newClassificationSight) {
-            $data = $sightModel->updateClassification($newClassificationSight, $id, $resultQuery['pon_nome']);
+        if($resultQuery['pot_classificacao'] != $newClassificationSight) {
+            $data = $sightModel->updateClassification($newClassificationSight, $id, $resultQuery['pot_nome']);
         }
 
-        if($resultQuery['pon_descricao'] != $newDrescripitionSight) {
-            $data = $sightModel->updateDrescripition($newDrescripitionSight, $id, $resultQuery['pon_nome']);
+        if($resultQuery['pot_descricao'] != $newDrescripitionSight) {
+            $data = $sightModel->updateDrescripition($newDrescripitionSight, $id, $resultQuery['pot_nome']);
         }
         
         header('Location: /homeSeghtsSuper');

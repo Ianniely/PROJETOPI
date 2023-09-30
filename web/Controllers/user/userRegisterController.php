@@ -39,11 +39,11 @@
         } else {
             $incorrectRegister = true;
 
-            require "web/Views/login.php";
+            require "web/Views/auth/login.php";
         }
        
     } else {
         $emptyRegister = true;
 
-        require "web/Views/login.php";
+        require "web/Views/auth/login.php";
     }

@@ -30,10 +30,10 @@
                         <li><a href="/">Início</a></li>
                         <li><a href="/sights">Pontos Turísticos</a></li>
                         <li><a href="/citys">Cidades</a></li>
-                        <li><a href="/anuciarEvento">Eventos</a></li>
-                        <li><a href="/pages">Hospedagem</a></li>
-                        <li><a href="/pages">Restaurantes</a></li>
-                        <li><a href="/montarRoteiro">Roteiros</a></li>
+                        <li><a href="/pages">Eventos</a></li>
+                        <li><a href="/accommodations">Hospedagens</a></li>
+                        <li><a href="/restaurants">Restaurantes</a></li>
+                        <li><a href="/pages">Roteiros</a></li>
                         <li class="relative group">
                             <a href="">Configurações</a>
                             <div class="w-36 p-1 rounded-md absolute bg-gray-200 top-full hidden text-gray-700">
