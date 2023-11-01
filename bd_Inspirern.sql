@@ -64,5 +64,3 @@ cli_tipo varchar(45),
 cli_email varchar(90) not null,
 cli_senha varchar(120) not null
 );
-
-insert into tb_clientes(cli_nome, cli_email, cli_senha) values('leonardo','leo20ing@gmail.com', '12345678');
